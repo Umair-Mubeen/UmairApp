@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { AgencySection } from "./AgencySection";
 import Link from "next/link";
 import Image from "next/image";
+import FeaturedProjects from "./FeaturedProject";
+
 
 /*
   This file contains two components:
@@ -24,8 +26,8 @@ export default function Hero() {
    <Link href="/" className="flex items-center gap-2">
           <Image
             src="/logo.png"
-            alt="Ahmer Web Services Logo"
-            width={40}
+            alt="Logo"
+            width={300}
             height={40}
             className="w-auto h-10"
           />
@@ -113,6 +115,7 @@ export default function Hero() {
       </section>
 
       <AgencySection/>
+      <FeaturedProjects/>
     </>
   );
 }
