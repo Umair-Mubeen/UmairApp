@@ -10,7 +10,7 @@ export function Navbar(){
             <nav className="absolute top-0 left-0 w-full flex justify-between items-center px-6 py-6 bg-transparent z-20">
    <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/logo.png"
+            src="/icon22.png"
             alt="Logo"
             width={300}
             height={4000}
