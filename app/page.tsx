@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { AgencySection } from "./AgencySection";
+import Link from "next/link";
+import Image from "next/image";
 
 /*
   This file contains two components:
@@ -19,8 +21,18 @@ export default function Hero() {
     <>
       {/* Navbar */}
       <nav className="absolute top-0 left-0 w-full flex justify-between items-center px-6 py-6 bg-transparent z-20">
-        <h1 className="text-2xl font-bold tracking-widest text-white">Ahmer Web Services</h1>
-
+   <Link href="/" className="flex items-center gap-2">
+          <Image
+            src="/logo.png"
+            alt="Ahmer Web Services Logo"
+            width={40}
+            height={40}
+            className="w-auto h-10"
+          />
+          <span className="text-2xl font-bold tracking-widest text-white">
+           
+          </span>
+        </Link>
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 text-white font-medium">
           <li className="hover:text-blue-400 cursor-pointer">Home</li>
