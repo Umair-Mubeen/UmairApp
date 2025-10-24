@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 
-export default function FeaturedProjects() {
+export function FeaturedProjects() {
   return (
-    <section className="relative min-h-screen bg-gradient-to-b from-[#04275c] to-[#0b1b4b] text-white flex flex-col items-center justify-center px-6 py-24 overflow-hidden">
+    <section className="relative min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 text-white flex flex-col items-center justify-center px-6 py-24 overflow-hidden">
       
       {/* Title Section */}
       <div className="text-center mb-10">
@@ -23,7 +23,7 @@ export default function FeaturedProjects() {
             key={index}
             whileHover={{ scale: 1.05 }}
             className={`px-6 py-3 rounded-lg border ${
-              index === 0 ? "bg-white text-[#0b1b4b] font-bold" : "border-blue-400 text-blue-300 hover:bg-blue-400 hover:text-white"
+              index === 0 ? "bg-white text-[#000000] font-bold" : "border-blue-400 text-blue-300 hover:bg-blue-400 hover:text-white"
             } transition`}
           >
             {tab}
