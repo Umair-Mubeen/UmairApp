@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+
 export function Navbar(){
     const [menuOpen, setMenuOpen] = useState(false);
     return (
@@ -22,10 +23,22 @@ export function Navbar(){
         </Link>
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 text-white font-medium">
-          <li className="hover:text-blue-400 cursor-pointer">Home</li>
-          <li className="hover:text-blue-400 cursor-pointer">About</li>
-          <li className="hover:text-blue-400 cursor-pointer">Services</li>
-          <li className="hover:text-blue-400 cursor-pointer">Contact</li>
+
+             <li className="hover:text-blue-400 cursor-pointer"><Link href={"/"}>Home </Link></li> 
+            
+        
+            <li className="hover:text-blue-400 cursor-pointer">
+              <a href="#about">About</a>
+              </li>
+        
+          
+            <li className="hover:text-blue-400 cursor-pointer">
+             <a href="#services"> Services </a>
+             </li>
+        
+          <li className="hover:text-blue-400 cursor-pointer">
+            <a href="#contact"> Contact  </a>
+            </li>
           
         </ul>
 
@@ -67,3 +80,4 @@ export function Navbar(){
 }
 
 export default Navbar;
+

@@ -5,6 +5,10 @@ import { WebSection} from "./WebSection";
 import {FeaturedProjects} from "./FeaturedProjects";
 import {WebExperienceSection} from "./WebExperienceSection";
 import {Fview} from './Fview'
+import {About} from './about/About';
+import {Services} from './services/Services';
+import {Contact} from './contact/Contact';
+
 export default function Hero() {
   
 
@@ -16,6 +20,9 @@ export default function Hero() {
             <AgencySection/>
             <FeaturedProjects/>
             <WebExperienceSection/>
+            <About />
+            <Services />
+      
             <Fview/>
         </main>
     </>

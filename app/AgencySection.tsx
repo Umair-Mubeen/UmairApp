@@ -1,9 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-
-/* ---------------------- AgencySection Component ---------------------- */
-
 export function AgencySection() {
-  // useScroll + transform for parallax effect on the floating images
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 500], [0, -40]);
   const y2 = useTransform(scrollY, [0, 500], [0, -80]);
@@ -11,7 +7,6 @@ export function AgencySection() {
   return (
     <section className="relative min-h-screen flex items-center px-6 md:px-12 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 text-white overflow-hidden">
       <div className="absolute top-6 left-0 w-full flex justify-center md:justify-start gap-6 z-10 px-6 md:px-12">
-        {/* Placeholder Logos */}
         <div className="flex items-center gap-6 overflow-x-auto py-3 md:py-0">
           {['Sony', 'HP', 'P&G', 'NFL', 'Forbes'].map((name) => (
             <div key={name} className="flex-shrink-0 opacity-80 bg-white/5 px-4 py-2 rounded-md text-sm md:text-base">
