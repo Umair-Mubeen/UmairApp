@@ -82,7 +82,6 @@ export function Contact() {
           transition={{ duration: 0.2 }}
           name="message"
           placeholder="Your Message"
-          rows="4"
           value={form.message}
           onChange={handleChange}
           className="w-full bg-transparent border border-blue-500/40 rounded-lg p-3 text-white placeholder-gray-300 focus:ring-2 focus:ring-blue-400 outline-none mb-4"
