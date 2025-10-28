@@ -22,7 +22,7 @@ export default function Hero() {
             <WebExperienceSection/>
             <About />
             <Services />
-      
+            
             <Fview/>
         </main>
     </>

@@ -102,21 +102,6 @@ export function Contact() {
         </motion.button>
       </motion.form>
 
-      {/* Contact Info */}
-      <motion.div
-        className="mt-16 space-y-3 text-gray-300 text-sm"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.3 }}
-      >
-        <p>📧 contact@lumixync.com</p>
-        <p>📞 +92 300 1234567</p>
-        <p>🌐 www.lumixync.netlify.app</p>
-      </motion.div>
-
-      <p className="mt-10 text-xs text-gray-400">
-        © {new Date().getFullYear()} Lumixync. All rights reserved.
-      </p>
     </section>
   );
 }
