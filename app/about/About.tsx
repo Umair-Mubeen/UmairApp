@@ -30,9 +30,9 @@ export  function About() {
     <Image
       src="/icon22.png"
       alt="Logo"
-      width={500}
+      width={150}
       height={45}
-      className="w-auto h-100 md:h-12 items-center bg-transparent z-20"
+      className="w-auto items-center bg-transparent z-20"
     />
   </div>
 
