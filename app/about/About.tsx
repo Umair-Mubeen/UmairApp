@@ -49,14 +49,7 @@ export  function About() {
         key={i}
         className="p-8 rounded-2xl bg-white/10 backdrop-blur-lg border border-white-400/20 hover:border-white-400 hover:shadow-[0_0_25px_rgba(59,130,246,0.4)] transition-all duration-300 flex items-start space-x-5"
       >
-        {v.logo && (
-          <Image
-            src={v.logo}
-            alt={`${v.title} logo`}
-   
-  className="w-auto h-10 md:h-12 relative z-20 brightness-125 contrast-125"
-          />
-        )}
+        
         <div>
           <h3 className="text-2xl md:text-2xl font-extrabold leading-tight mb-6">
             {v.title}
