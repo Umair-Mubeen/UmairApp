@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 export  function About() {
   const values = [
@@ -19,45 +20,59 @@ export  function About() {
   return (
     <section
       id="about"
-      className="relative min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-12 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 text-white overflow-hidden"
-    >
-      {/* Background Blur / Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-800/50 via-purple-800/30 to-blue-800/40 backdrop-blur-sm"></div>
+      className="relative min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-12 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 text-white overflow-hidden">
 
-      {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto text-center md:text-left space-y-8 py-20">
-        <h1 className="text-5xl md:text-6xl font-bold leading-tight text-white">
-          About <span className="text-blue-400">Lumixync</span>
-        </h1>
-        <p className="text-gray-200 text-lg leading-relaxed max-w-3xl">
-          We design, develop, and deliver digital experiences that shape the
-          future of brands. With a perfect balance of creativity and strategy,
-          Lumixync transforms ideas into powerful, high-performing digital
-          realities.
-        </p>
+  <div className="flex justify-center md:justify-start items-center space-x-3">
+    <h1 className="text-5xl md:text-6xl font-bold leading-tight text-white">
+      About
+    </h1>
+    <Image
+      src="/icon22.png"
+      alt="Logo"
+      width={500}
+      height={45}
+      className="w-auto h-100 md:h-12 items-center bg-transparent z-20"
+    />
+  </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mt-12">
-          {values.map((v, i) => (
-            <div
-              key={i}
-              className="p-8 rounded-2xl bg-white/10 backdrop-blur-lg border border-blue-400/20 hover:border-blue-400 hover:shadow-[0_0_25px_rgba(59,130,246,0.4)] transition-all duration-300"
-            >
-              <h3 className="text-2xl font-semibold mb-3 text-blue-300">
-                {v.title}
-              </h3>
-              <p className="text-gray-200 leading-relaxed">{v.desc}</p>
-            </div>
-          ))}
+  <p className="text-gray-200 text-lg leading-relaxed max-w-3xl">
+    We design, develop, and deliver digital experiences that shape the
+    future of brands. With a perfect balance of creativity and strategy,
+    Lumixync transforms ideas into powerful, high-performing digital
+    realities.
+  </p>
+
+  <div className="grid md:grid-cols-3 gap-8 mt-12">
+    {values.map((v, i) => (
+      <div
+        key={i}
+        className="p-8 rounded-2xl bg-white/10 backdrop-blur-lg border border-white-400/20 hover:border-white-400 hover:shadow-[0_0_25px_rgba(59,130,246,0.4)] transition-all duration-300 flex items-start space-x-5"
+      >
+        {v.logo && (
+          <Image
+            src={v.logo}
+            alt={`${v.title} logo`}
+   
+  className="w-auto h-10 md:h-12 relative z-20 brightness-125 contrast-125"
+          />
+        )}
+        <div>
+          <h3 className="text-2xl md:text-2xl font-extrabold leading-tight mb-6">
+            {v.title}
+          </h3>
+          <p className="text-gray-200 leading-relaxed">{v.desc}</p>
         </div>
-
-        <button className="mt-12 bg-blue-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:shadow-[0_0_25px_rgba(59,130,246,0.4)] transition-all duration-300">
-          Learn More
-        </button>
       </div>
+    ))}
+  </div>
 
-      {/* Optional Accent Blur on Right Side */}
-      <div className="absolute right-0 top-0 w-[40vw] h-[40vw] bg-blue-500/20 rounded-full blur-[160px]"></div>
-    </section>
+  <button className="mt-12 bg-blue-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:shadow-[0_0_25px_rgba(59,130,246,0.4)] transition-all duration-300">
+    Learn More
+  </button>
+</div>
+
+     </section>
   );
 }
 

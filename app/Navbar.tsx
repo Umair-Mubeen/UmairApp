@@ -11,7 +11,6 @@ export function Navbar(){
             <div className="fixed top-0 left-0 w-full z-50 bg-[#0b1b4b]/80 backdrop-blur-md">
 
             <nav className="absolute top-0 left-0 w-full flex justify-between items-center px-6 py-6 bg-transparent z-20">
-            <Link href="/" className="flex items-center gap-2">
               <Image
                 src="/icon22.png"
                 alt="Logo"
@@ -20,7 +19,6 @@ export function Navbar(){
                 className="w-auto h-10"
             />
           <span className="text-2xl font-bold tracking-widest text-white"></span>
-        </Link>
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 text-white font-medium">
 
@@ -66,9 +64,9 @@ export function Navbar(){
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <li className="hover:text-blue-400 cursor-pointer" onClick={() => setMenuOpen(false)}>Home</li>
-            <li className="hover:text-blue-400 cursor-pointer" onClick={() => setMenuOpen(false)}>About</li>
-            <li className="hover:text-blue-400 cursor-pointer" onClick={() => setMenuOpen(false)}>Services</li>
+            <li className="hover:text-blue-400 cursor-pointer" onClick={() => setMenuOpen(false)}> <Link href={"/"}> Home </Link></li>
+            <li className="hover:text-blue-400 cursor-pointer" onClick={() => setMenuOpen(false)}><a href="#about">About</a></li>
+            <li className="hover:text-blue-400 cursor-pointer" onClick={() => setMenuOpen(false)}><a href="#services">Services </a></li>
             <li className="hover:text-blue-400 cursor-pointer" onClick={() => setMenuOpen(false)}>Contact</li>
           </motion.ul>
         )}

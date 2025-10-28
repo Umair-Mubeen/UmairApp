@@ -23,7 +23,6 @@ export function WebExperienceSection() {
 
   const [index, setIndex] = useState(0);
 
-  // Auto-slide every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % slides.length);
@@ -60,7 +59,7 @@ export function WebExperienceSection() {
       </div>
 
       {/* Right Auto-Sliding Carousel */}
-      <div className="flex-1 relative w-full md:w-[600px] h-[260px] md:h-[400px] rounded-2xl overflow-hidden shadow-2xl">
+      <div className="flex-1 relative w-full max-w-md md:max-w-lg lg:max-w-2xl h-[50vh] md:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
         {slides.map((slide, i) => (
           <motion.div
             key={i}
@@ -69,21 +68,20 @@ export function WebExperienceSection() {
             animate={{ opacity: i === index ? 1 : 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Background Image */}
             <img
               src={slide.src}
               alt={`Slide ${i}`}
-              sizes="(max-width: 768px) 90vw, 600px"
-              className="object-cover object-center"
-              //priority={i === 0}
+              className="w-full h-full object-cover object-center"
             />
-            
-            {/* Dark Overlay */}
+
+            {/* Overlay */}
             <div className="absolute inset-0 bg-black/40" />
 
             {/* Text Overlay */}
             <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/70 to-transparent">
-              <h3 className="text-2xl md:text-3xl font-bold mb-2">{slide.title}</h3>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">
+                {slide.title}
+              </h3>
               <p className="text-gray-300 text-sm md:text-base">{slide.desc}</p>
             </div>
           </motion.div>
