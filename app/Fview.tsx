@@ -56,7 +56,7 @@ export function Fview() {
         <div>
           <h3 className="text-lg font-semibold text-white mb-3">Get in Touch</h3>
           <p className="flex items-center gap-2 text-gray-400 mb-2">
-            <Mail size={18} /> support@
+            <Mail size={18} /> support@lumixync.com
           </p>
           <div className="flex items-center gap-4 mt-4">
             <a href="#" className="hover:text-blue-400 transition"><Facebook size={20} /></a>
