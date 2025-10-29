@@ -22,7 +22,6 @@ export default function Hero() {
             <WebExperienceSection/>
             <About />
             <Services />
-            <Contact/>
             
             <Fview/>
         </main>
