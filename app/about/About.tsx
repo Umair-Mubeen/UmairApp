@@ -28,7 +28,7 @@ export  function About() {
       About
     </h1>
     <Image
-      src="/icon22.png"
+      src="/web.png"
       alt="Logo"
       width={150}
       height={45}

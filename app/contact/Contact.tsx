@@ -1,107 +1,164 @@
 "use client";
-
-import { useState } from "react";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
 
-  const handleChange = (e:any) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e:any) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.name || !form.email || !form.message) {
-      alert("Please fill in all fields.");
-      return;
-    }
-    setSubmitted(true);
-    setTimeout(() => {
-      setForm({ name: "", email: "", message: "" });
-      setSubmitted(false);
-    }, 3000);
+    console.log("Form submitted:", formData);
+    alert("Thank you! Your message has been sent.");
+    setFormData({ name: "", company: "", email: "", phone: "", message: "" });
   };
 
   return (
     <section
       id="contact"
-      className="min-h-screen flex flex-col items-center justify-center text-center p-10 text-white"
-      style={{ background: "var(--lumixync-gradient)" }}
+      className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 text-gray-900 flex flex-col items-center justify-center px-6 py-20"
     >
-      {/* Header */}
-      <motion.div
+      <motion.h2
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="text-4xl font-bold text-center mb-4"
       >
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-blue-300">
-          Get in Touch
-        </h1>
-        <p className="text-gray-200 mb-10 max-w-xl mx-auto">
-          Let’s discuss your ideas, projects, or collaborations.  
-          We’d love to hear from you — every message matters to us.
-        </p>
-      </motion.div>
+        Take The Silk Road To <br />
+        <span className="text-blue-600">Digitizing Your Business Growth</span>
+      </motion.h2>
+
+      <p className="text-lg text-center text-gray-600 mb-12">
+        Start A Conversation With Us
+      </p>
 
       {/* Contact Form */}
       <motion.form
         onSubmit={handleSubmit}
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="w-full max-w-md bg-white/10 border border-blue-400/30 rounded-2xl p-8 backdrop-blur-sm shadow-xl"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="w-full max-w-3xl bg-white rounded-2xl shadow-lg p-8 grid grid-cols-1 md:grid-cols-2 gap-6"
       >
-        <motion.input
-          whileFocus={{ scale: 1.02, borderColor: "#60a5fa" }}
-          transition={{ duration: 0.2 }}
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          value={form.name}
-          onChange={handleChange}
-          className="w-full bg-transparent border border-blue-500/40 rounded-lg p-3 text-white placeholder-gray-300 focus:ring-2 focus:ring-blue-400 outline-none mb-4"
-        />
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Name*
+          </label>
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            placeholder="Your Name"
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
 
-        <motion.input
-          whileFocus={{ scale: 1.02, borderColor: "#60a5fa" }}
-          transition={{ duration: 0.2 }}
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          value={form.email}
-          onChange={handleChange}
-          className="w-full bg-transparent border border-blue-500/40 rounded-lg p-3 text-white placeholder-gray-300 focus:ring-2 focus:ring-blue-400 outline-none mb-4"
-        />
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Company Name*
+          </label>
+          <input
+            type="text"
+            name="company"
+            value={formData.company}
+            onChange={handleChange}
+            required
+            placeholder="Company Name"
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
 
-        <motion.textarea
-          whileFocus={{ scale: 1.02, borderColor: "#60a5fa" }}
-          transition={{ duration: 0.2 }}
-          name="message"
-          placeholder="Your Message"
-          value={form.message}
-          onChange={handleChange}
-          className="w-full bg-transparent border border-blue-500/40 rounded-lg p-3 text-white placeholder-gray-300 focus:ring-2 focus:ring-blue-400 outline-none mb-4"
-        ></motion.textarea>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Email*
+          </label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            placeholder="you@example.com"
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
 
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          type="submit"
-          disabled={submitted}
-          className={`w-full py-3 rounded-lg font-semibold transition ${
-            submitted
-              ? "bg-green-500 text-white cursor-default"
-              : "bg-blue-500 hover:bg-blue-600 text-white"
-          }`}
-        >
-          {submitted ? "Message Sent!" : "Send Message"}
-        </motion.button>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Phone*
+          </label>
+          <input
+            type="tel"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+            placeholder="+92 300 0000000"
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+
+        <div className="md:col-span-2">
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Your Message*
+          </label>
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+            rows={4}
+            placeholder="Type your message here..."
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          ></textarea>
+        </div>
+
+        <div className="md:col-span-2 flex justify-center">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            type="submit"
+            className="bg-blue-600 text-white font-semibold px-8 py-3 rounded-full shadow-md hover:bg-blue-700 transition"
+          >
+            Submit
+          </motion.button>
+        </div>
       </motion.form>
 
+      {/* Social Links */}
+      <div className="flex flex-col items-center mt-12">
+        <p className="text-gray-700 font-medium mb-4">Follow Us</p>
+        <div className="flex gap-6">
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            className="text-gray-600 hover:text-pink-500 transition text-3xl"
+          >
+            <FaInstagram />
+          </a>
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            className="text-gray-600 hover:text-blue-700 transition text-3xl"
+          >
+            <FaLinkedin />
+          </a>
+        </div>
+      </div>
     </section>
   );
 }
