@@ -35,6 +35,8 @@ export function Fview() {
               </li>
             <li><a href="#about" className="hover:text-blue-400 transition">About</a></li>
             <li><a href="#services" className="hover:text-blue-400 transition">Services</a></li>
+            <li><a href="#casestudy" className="hover:text-blue-400 transition">CaseStudy</a></li>
+          
             <li><a href="" className="hover:text-blue-400 transition">Contact</a></li>
           </ul>
         </div>
@@ -54,7 +56,7 @@ export function Fview() {
         <div>
           <h3 className="text-lg font-semibold text-white mb-3">Get in Touch</h3>
           <p className="flex items-center gap-2 text-gray-400 mb-2">
-            <Mail size={18} /> umair.mubeenir@gmail.com
+            <Mail size={18} /> support@
           </p>
           <div className="flex items-center gap-4 mt-4">
             <a href="#" className="hover:text-blue-400 transition"><Facebook size={20} /></a>

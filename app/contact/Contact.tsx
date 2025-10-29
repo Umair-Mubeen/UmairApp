@@ -21,14 +21,14 @@ export function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    alert("Thank you! Your message has been sent.");
+    //alert("Thank you! Your message has been sent.");
     setFormData({ name: "", company: "", email: "", phone: "", message: "" });
   };
 
   return (
     <section
       id="contact"
-      className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 text-gray-900 flex flex-col items-center justify-center px-6 py-20"
+      className="bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 text-gray-300 flex flex-col items-center justify-center px-6 py-20"
     >
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
@@ -37,10 +37,10 @@ export function Contact() {
         className="text-4xl font-bold text-center mb-4"
       >
         Take The Silk Road To <br />
-        <span className="text-blue-600">Digitizing Your Business Growth</span>
+        <span className="text-white-600">Digitizing Your Business Growth</span>
       </motion.h2>
 
-      <p className="text-lg text-center text-gray-600 mb-12">
+      <p className="text-lg text-center text-white-600 mb-12">
         Start A Conversation With Us
       </p>
 
@@ -138,27 +138,6 @@ export function Contact() {
           </motion.button>
         </div>
       </motion.form>
-
-      {/* Social Links */}
-      <div className="flex flex-col items-center mt-12">
-        <p className="text-gray-700 font-medium mb-4">Follow Us</p>
-        <div className="flex gap-6">
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            className="text-gray-600 hover:text-pink-500 transition text-3xl"
-          >
-            <FaInstagram />
-          </a>
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            className="text-gray-600 hover:text-blue-700 transition text-3xl"
-          >
-            <FaLinkedin />
-          </a>
-        </div>
-      </div>
     </section>
   );
 }

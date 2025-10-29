@@ -10,7 +10,7 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "services", "contact"];
+      const sections = ["home", "about", "services", "casestudy", "contact"];
       for (let id of sections) {
         const el = document.getElementById(id);
         if (el) {
@@ -48,6 +48,8 @@ export function Navbar() {
           {[
             { id: "about", label: "About", href: "#about" },
             { id: "services", label: "Services", href: "#services" },
+            { id: "casestudy", label: "CaseStudy", href: "#casestudy" },
+            
             { id: "contact", label: "Contact", href: "#contact" },
           ].map((item) => (
             <motion.li
@@ -109,7 +111,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
           >
-            {["About", "Services", "Contact"].map((label, index) => (
+            {["About", "Services", "CaseStudy", "Contact"].map((label, index) => (
               <motion.li
                 key={label}
                 whileHover={{ scale: 1.1, color: "#60A5FA" }}

@@ -8,6 +8,7 @@ import {Fview} from './Fview'
 import {About} from './about/About';
 import {Services} from './services/Services';
 import {Contact} from './contact/Contact';
+import CaseStudy from "./CaseStudy/CaseStudy";
 
 export default function Hero() {
   
@@ -22,6 +23,8 @@ export default function Hero() {
             <WebExperienceSection/>
             <About />
             <Services />
+            <CaseStudy/>
+            <Contact/>
             
             <Fview/>
         </main>
