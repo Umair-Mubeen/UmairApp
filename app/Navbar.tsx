@@ -28,7 +28,7 @@ export function Navbar() {
 
   return (
     <div className="fixed top-0 left-0 w-full z-50 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900">
-      <nav className="flex justify-between items-center px-6 py-5 md:py-4">
+<nav className="flex justify-between items-center px-6 py-5 md:py-4 border-b-[0.5px] border-white">
         {/* Logo */}
         <motion.div whileHover={{ rotate: -5, scale: 1.05 }}>
           <Link href={"/"}>
@@ -106,7 +106,7 @@ export function Navbar() {
         {/* Mobile Dropdown */}
         {menuOpen && (
           <motion.ul
-            className="absolute top-20 left-0 w-full bg-[#0b1b4b]/95 flex flex-col items-center gap-6 py-8 text-white font-medium md:hidden"
+            className="absolute top-20 left-0 w-full bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 flex flex-col items-center gap-6 py-8 text-white font-medium md:hidden"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
