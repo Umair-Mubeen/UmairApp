@@ -27,7 +27,7 @@ export function Navbar() {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 w-full z-50 bg-[#0b1b4b]/80 backdrop-blur-md border-b border-white/10">
+    <div className="fixed top-0 left-0 w-full z-50 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900">
       <nav className="flex justify-between items-center px-6 py-5 md:py-4">
         {/* Logo */}
         <motion.div whileHover={{ rotate: -5, scale: 1.05 }}>
