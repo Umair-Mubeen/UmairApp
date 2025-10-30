@@ -22,7 +22,7 @@ export function Services() {
   return (
     <section
       id="services"
-      className="relative min-h-screen flex flex-col items-center justify-center px-6 md:px-12 py-16 text-white text-center overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900"
+      className="relative min-h-screen flex flex-col items-center justify-center px-6 md:px-12 py-16 text-white text-center overflow-hidden"
     >
       {/* Section Title */}
       <h1 className="relative z-10 text-4xl md:text-5xl font-extrabold leading-tight mb-12">

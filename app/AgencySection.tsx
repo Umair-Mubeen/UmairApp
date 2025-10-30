@@ -5,7 +5,7 @@ export function AgencySection() {
   const y2 = useTransform(scrollY, [0, 500], [0, -80]);
 
   return (
-    <section className="relative min-h-screen flex items-center px-6 md:px-12 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 text-white overflow-hidden">
+    <section className="relative min-h-screen flex items-center px-6 md:px-12 text-white overflow-hidden">
       <div className="absolute top-6 left-0 w-full flex justify-center md:justify-start gap-6 z-10 px-6 md:px-12">
         <div className="flex items-center gap-6 overflow-x-auto py-3 md:py-0">
           {['Sony', 'HP', 'P&G', 'NFL', 'Forbes'].map((name) => (
@@ -82,8 +82,6 @@ export function AgencySection() {
         </div>
       </div>
 
-      {/* Subtle gradient overlay to match hero */}
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 opacity-30 pointer-events-none" />
     </section>
   );
 }

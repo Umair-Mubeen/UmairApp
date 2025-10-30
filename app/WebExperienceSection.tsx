@@ -31,7 +31,7 @@ export function WebExperienceSection() {
   }, [slides.length]);
 
   return (
-    <section className="relative min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-12 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 text-white overflow-hidden">
+    <section className="relative min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-12 text-white overflow-hidden">
       
       {/* Left Text Section */}
       <div className="flex-1 max-w-xl text-center md:text-left mb-12 md:mb-0">

@@ -20,7 +20,7 @@ export  function About() {
   return (
     <section
       id="about"
-      className="relative min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-12 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 text-white overflow-hidden">
+      className="relative min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-12 text-white overflow-hidden">
 
       <div className="relative z-10 max-w-5xl mx-auto text-center md:text-left space-y-8 py-20">
   <div className="flex justify-center md:justify-start items-center space-x-3">

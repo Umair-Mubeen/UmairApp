@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export function Fview() {
   return (
-         <footer className="bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 text-gray-300 pt-16 pb-8 px-6 md:px-12">
+         <footer className="pt-16 pb-8 px-6 md:px-12">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-white/10 pb-10">
         
         {/* 1️⃣ Brand Info */}
@@ -37,7 +37,7 @@ export function Fview() {
             <li><a href="#services" className="hover:text-blue-400 transition">Services</a></li>
             <li><a href="#casestudy" className="hover:text-blue-400 transition">CaseStudy</a></li>
           
-            <li><a href="" className="hover:text-blue-400 transition">Contact</a></li>
+            <li><a href="#contact" className="hover:text-blue-400 transition">Contact</a></li>
           </ul>
         </div>
 

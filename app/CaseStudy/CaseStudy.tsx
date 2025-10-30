@@ -1,10 +1,14 @@
 "use client";
+import { useRef } from "react";
+
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { ArrowDown, ArrowUp } from "lucide-react";
 
 export function CaseStudy() {
-    const results = [
+const sectionRef = useRef(null);
+  const results = [
     { stat: "56%", label: "Increase in Retention" },
     { stat: "40K+", label: "New Members Joined" },
     { stat: "2.5x", label: "Faster Load Times" },
@@ -30,7 +34,10 @@ export function CaseStudy() {
   return (
     <>
     <section id="casestudy">
-<section className="relative overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 text-white py-20 md:py-32 px-6 md:px-12 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto shadow-2xl">
+    <section
+  ref={sectionRef}
+  className="relative overflow-hidden text-white py-20 md:py-32 px-6 md:px-12 flex flex-col md:flex-row items-center justify-between w-full max-w-7xl"
+>
   {/* Text Section */}
   <motion.div
     className="md:w-1/2 z-10 text-center md:text-left"
@@ -74,7 +81,7 @@ export function CaseStudy() {
     transition={{ duration: 0.9 }}
   >
     {/* Main Image */}
-    <div className="relative w-64 sm:w-1/2 md:w-3/4 aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-r from-white/60 via-white/30 to-transparent p-[2px] shadow-xl hover:scale-[1.03] transition-transform">
+    <div className="relative w-full sm:w-3/4 md:w-full max-w-md aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-r from-white/60 via-white/30 to-transparent p-[2px] shadow-xl hover:scale-[1.03] transition-transform">
       <Image
         src="https://cdni.iconscout.com/illustration/premium/thumb/web-service-illustration-svg-download-png-7558166.png"
         alt="HP web design illustration"
@@ -84,7 +91,7 @@ export function CaseStudy() {
     </div>
 
     {/* Smaller Overlay Image */}
-    <div className="relative w-44 sm:w-1/3 md:w-1/2 aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-purple-400/40 to-blue-300/30 p-[2px] shadow-lg hover:scale-[1.03] transition-transform md:-mt-20 md:-mr-10">
+    <div className="relative w-32 sm:w-40 md:w-48 aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-purple-400/40 to-blue-300/30 p-[2px] shadow-lg hover:scale-[1.03] transition-transform -mt-16 md:-mt-20 md:-mr-10">
       <Image
         src="https://png.pngtree.com/png-vector/20200312/ourmid/pngtree-modern-flat-design-concept-of-web-hosting-services-database-storage-data-png-image_2157850.jpg"
         alt="HPOA Web Project"
@@ -98,8 +105,7 @@ export function CaseStudy() {
   <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-indigo-700/20 via-transparent to-purple-700/30 blur-3xl pointer-events-none" />
 </section>
 
-    
-  <section className="relative overflow-hidden bg-gradient-to-br from-indigo-950 via-purple-900 to-blue-900 py-24 px-6 text-white">
+  <section className="relative overflow-hidden to-blue-900 py-24 px-6 text-white">
       {/* Floating gradient glow */}
       <div className="absolute inset-0 opacity-30 bg-[radial-gradient(ellipse_at_top_right,_rgba(99,102,241,0.4),_transparent_60%)]" />
 
@@ -158,7 +164,7 @@ export function CaseStudy() {
     </section>
 
 
-    <section className="relative overflow-hidden bg-gradient-to-br from-indigo-950 via-purple-900 to-blue-900 py-24 px-6 text-white">
+    <section className="relative overflow-hidden py-24 px-6 text-white">
       {/* Subtle glow overlay */}
       <div className="absolute inset-0 opacity-30 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(147,197,253,0.4),_transparent_70%)]" />
 
@@ -243,7 +249,7 @@ export function CaseStudy() {
       </div>
     </section>
 
-            <section className="relative overflow-hidden bg-gradient-to-br from-indigo-950 via-purple-900 to-blue-900 py-24 px-6 text-white">
+            <section className="relative overflow-hidden py-24 px-6 text-white">
       {/* Subtle glow */}
       <div className="absolute inset-0 opacity-30 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(147,197,253,0.4),_transparent_70%)]" />
 
@@ -281,7 +287,7 @@ export function CaseStudy() {
       </div>
     </section>
 
-    <section className="bg-gradient-to-br from-indigo-950 via-purple-900 to-blue-900 text-white py-16 text-center">
+    <section className="text-white py-16 text-center">
       <h3 className="text-2xl font-semibold mb-4">Want results like these?</h3>
       <p className="mb-6 text-gray-200">
         Let’s build a high-performing digital experience for your brand.

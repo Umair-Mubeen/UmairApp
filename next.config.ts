@@ -10,6 +10,8 @@ const nextConfig: NextConfig = {
       "st3.depositphotos.com",
       "freerangestock.com",
       "toppng.com",
+      "i.ibb.co",
+      "consultia-php.vercel.app",
     ],
 
   },

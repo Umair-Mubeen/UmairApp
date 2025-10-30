@@ -28,7 +28,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 text-gray-300 flex flex-col items-center justify-center px-6 py-20"
+      className="text-gray-300 flex flex-col items-center justify-center px-6 py-20"
     >
       <motion.h2
         initial={{ opacity: 0, y: 30 }}

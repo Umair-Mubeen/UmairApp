@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function WebSection() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 text-white overflow-hidden pt-32 sm:pt-36 md:pt-40 px-6 sm:px-8 md:px-12">
+    <section className="relative min-h-screen flex flex-col justify-center items-center text-white overflow-hidden pt-32 sm:pt-36 md:pt-40 px-6 sm:px-8 md:px-12">
 
       {/* Content Wrapper */}
       <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-6xl gap-10">

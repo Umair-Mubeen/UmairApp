@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function FeaturedProjects() {
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 text-white flex flex-col items-center justify-center px-6 py-24 overflow-hidden">
+    <section className="relative min-h-screen text-white flex flex-col items-center justify-center px-6 py-24 overflow-hidden">
       
       {/* Title Section */}
       <div className="text-center mb-10">
