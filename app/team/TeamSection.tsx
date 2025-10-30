@@ -13,7 +13,7 @@ const teamMembers = [
 
 export function TeamSection() {
   return (
-    <section className="py-16">
+    <section className="py-16" id="team">
       <div className="max-w-7xl mx-auto px-6">
       <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-3 pb-5">
   <Image

@@ -36,10 +36,10 @@ export function Fview() {
             <li><a href="#about" className="hover:text-blue-400 transition">About</a></li>
             <li><a href="#services" className="hover:text-blue-400 transition">Services</a></li>
             <li><a href="#casestudy" className="hover:text-blue-400 transition">CaseStudy</a></li>
-          
-            <li><a href="#contact" className="hover:text-blue-400 transition">Contact</a></li>
           </ul>
         </div>
+
+      
 
         {/* 3️⃣ Services */}
         <div>
