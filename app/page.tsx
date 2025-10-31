@@ -18,9 +18,6 @@ export default function Hero() {
     "bg-gradient-to-br from-blue-900 via-cyan-800 to-teal-700",
   ];
    const [themeIndex, setThemeIndex] = useState(0);
-
-  
-
      return (
     <>
     
@@ -73,3 +70,8 @@ export default function Hero() {
     </>
   );
 }
+
+
+// git pull origin master
+// npm run build
+// pm2 restart lumixync
