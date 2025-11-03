@@ -47,39 +47,93 @@ export function AgencySection() {
             </a>
           </div>
         </div>
+          
+          {/* Right Column - Four Square Floating Images with Captions */}
+<div className="relative h-[90vh] md:h-[100vh] flex items-center justify-center">
+  {/* Background gradient glow */}
+  <div className="absolute inset-0 bg-gradient-to-tr from-indigo-700/30 via-purple-600/20 to-blue-500/20 blur-3xl rounded-full"></div>
 
-        {/* Right Column - Floating Images */}
-        <div className="relative h-[60vh] md:h-[70vh] flex items-center justify-center">
-          <motion.img
-            style={{ y: y1 }}
-            src="https://images.unsplash.com/photo-1557800636-894a64c1696f?auto=format&fit=crop&w=800&q=80"
-            alt="Mockup 1"
-            className="absolute w-56 md:w-80 rounded-xl shadow-2xl object-cover rotate-3 top-8 right-12"
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          />
+  {/* Grid container */}
+  <div className="grid grid-cols-2 gap-6 md:gap-10 z-10">
+    {/* Image 1 - E-Commerce Solutions */}
+    <motion.div
+      style={{ y: y1 }}
+      initial={{ opacity: 0, scale: 0.9, y: 40 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      className="relative group overflow-hidden rounded-2xl shadow-2xl border border-white/10 w-40 h-40 md:w-64 md:h-64"
+    >
+      <img
+        src="https://images.unsplash.com/photo-1677693972403-db681288b5da?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2670"
+        alt="E-Commerce Development"
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 rotate-2"
+      />
+      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center">
+        <p className="text-white text-sm md:text-base font-medium mb-3">E-Commerce Development</p>
+      </div>
+    </motion.div>
 
-          <motion.img
-            style={{ y: y2 }}
-            src="https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=900&q=80"
-            alt="Mockup 2"
-            className="absolute w-72 md:w-96 rounded-2xl shadow-2xl object-cover -rotate-2 top-20 right-0"
-            initial={{ opacity: 0, scale: 0.92, y: 40 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.9 }}
-          />
+    {/* Image 2 - Custom Web Portals */}
+    <motion.div
+      style={{ y: y1 }}
+      initial={{ opacity: 0, scale: 0.9, y: 40 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      transition={{ duration: 1.2 }}
+      className="relative group overflow-hidden rounded-2xl shadow-2xl border border-white/10 w-40 h-40 md:w-64 md:h-64"
+    >
+      <img
+        src="https://www.applications-platform.com/wp-content/uploads/2019/10/Web-portals-dashboard.png"
+        alt="Web Portals"
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 -rotate-2"
+      />
+      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center">
+        <p className="text-white text-sm md:text-base font-medium mb-3">Custom Web Portals</p>
+      </div>
+    </motion.div>
 
-          <motion.img
-            style={{ y: y1 }}
-            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=80"
-            alt="Mockup 3"
-            className="absolute w-48 md:w-64 rounded-lg shadow-xl object-cover -rotate-6 bottom-6 left-6"
-            initial={{ opacity: 0, scale: 0.9, y: 30 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          />
-        </div>
+    {/* Image 3 - SaaS Solutions */}
+    <motion.div
+      style={{ y: y1 }}
+      initial={{ opacity: 0, scale: 0.9, y: 40 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      transition={{ duration: 1.4 }}
+      className="relative group overflow-hidden rounded-2xl shadow-2xl border border-white/10 w-40 h-40 md:w-64 md:h-64"
+    >
+      <img
+        src="https://images.unsplash.com/photo-1621036579842-9080c7119f67?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2670"
+        alt="SaaS Solutions"
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 rotate-1"
+      />
+      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center">
+        <p className="text-white text-sm md:text-base font-medium mb-3">SaaS & Cloud Platforms</p>
+      </div>
+    </motion.div>
+
+    {/* Image 4 - Enterprise Solutions */}
+    <motion.div
+      style={{ y: y1 }}
+      initial={{ opacity: 0, scale: 0.9, y: 40 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      transition={{ duration: 1.6 }}
+      className="relative group overflow-hidden rounded-2xl shadow-2xl border border-white/10 w-40 h-40 md:w-64 md:h-64"
+    >
+      <img
+        src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=1740"
+        alt="Enterprise Web Apps"
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 -rotate-3"
+      />
+      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center">
+        <p className="text-white text-sm md:text-base font-medium mb-3">Enterprise Web Solutions</p>
+      </div>
+    </motion.div>
+  </div>
+
+  {/* Floating glow effect */}
+  <div className="absolute -bottom-12 right-8 w-44 h-44 bg-blue-500/20 blur-3xl rounded-full animate-pulse"></div>
+</div>
+
+          
+
       </div>
 
     </section>
