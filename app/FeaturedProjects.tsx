@@ -34,15 +34,17 @@ export function FeaturedProjects() {
       {/* Floating Project Images */}
       <div className="relative flex flex-wrap justify-center gap-10 md:gap-16">
         {[ 
-          "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
-          "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80"
+          "/FeatureProjects/B2B.png",
+          "/FeatureProjects/B2C.png",
+          "/FeatureProjects/ECommerce.png"
+  
         ].map((img, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.2 }}
-            className="w-[280px] md:w-[320px] rotate-3 hover:rotate-0 transition-transform duration-300 overflow-hidden rounded-2xl shadow-lg"
+            className="w-[280px] md:w-[320px] transition-transform duration-300 overflow-hidden rounded-2xl shadow-lg"
           >
             <img src={img} alt={`Project ${index + 1}`} className="w-full object-cover" />
           </motion.div>

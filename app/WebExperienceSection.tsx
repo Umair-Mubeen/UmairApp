@@ -15,8 +15,8 @@ export function WebExperienceSection() {
       desc: "Showcase your work with elegant, custom web design.",
     },
     {
-      src: "https://images.unsplash.com/photo-1557800636-894a64c1696f?auto=format&fit=crop&w=1000&q=80",
-      title: "eCommerce Solutions",
+      src: "/ESolutions.jpg",
+      title: "E-Commerce Solutions",
       desc: "Sell more online with fast, engaging, and mobile-optimized stores.",
     },
   ];

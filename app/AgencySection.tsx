@@ -48,93 +48,35 @@ export function AgencySection() {
           </div>
         </div>
           
-          {/* Right Column - Four Square Floating Images with Captions */}
-<div className="relative h-[90vh] md:h-[100vh] flex items-center justify-center">
+       
+      {/* Single Floating Showcase Image */}
+<div className="relative h-[90vh] md:h-[100vh] flex items-center justify-center overflow-hidden">
   {/* Background gradient glow */}
   <div className="absolute inset-0 bg-gradient-to-tr from-indigo-700/30 via-purple-600/20 to-blue-500/20 blur-3xl rounded-full"></div>
 
-  {/* Grid container */}
-  <div className="grid grid-cols-2 gap-6 md:gap-10 z-10">
-    {/* Image 1 - E-Commerce Solutions */}
-    <motion.div
-      style={{ y: y1 }}
-      initial={{ opacity: 0, scale: 0.9, y: 40 }}
-      animate={{ opacity: 1, scale: 1, y: 0 }}
-      transition={{ duration: 1 }}
-      className="relative group overflow-hidden rounded-2xl shadow-2xl border border-white/10 w-40 h-40 md:w-64 md:h-64"
-    >
-      <img
-        src="https://images.unsplash.com/photo-1677693972403-db681288b5da?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2670"
-        alt="E-Commerce Development"
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 rotate-2"
-      />
-      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center">
-        <p className="text-white text-sm md:text-base font-medium mb-3">E-Commerce Development</p>
-      </div>
-    </motion.div>
+      {/* Single image container */}
+      <motion.div
+        style={{ y: y1 }}
+        initial={{ opacity: 0, scale: 0.9, y: 40 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="relative group overflow-hidden rounded-3xl shadow-2xl border border-white/10 w-[80vw] h-[70vh] md:w-[60vw] md:h-[70vh] z-10"
+      >
+        <img
+          src="/WebAgency.png"
+          alt="Custom Web Solutions"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        
+        </motion.div>
 
-    {/* Image 2 - Custom Web Portals */}
-    <motion.div
-      style={{ y: y1 }}
-      initial={{ opacity: 0, scale: 0.9, y: 40 }}
-      animate={{ opacity: 1, scale: 1, y: 0 }}
-      transition={{ duration: 1.2 }}
-      className="relative group overflow-hidden rounded-2xl shadow-2xl border border-white/10 w-40 h-40 md:w-64 md:h-64"
-    >
-      <img
-        src="https://www.applications-platform.com/wp-content/uploads/2019/10/Web-portals-dashboard.png"
-        alt="Web Portals"
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 -rotate-2"
-      />
-      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center">
-        <p className="text-white text-sm md:text-base font-medium mb-3">Custom Web Portals</p>
-      </div>
-    </motion.div>
-
-    {/* Image 3 - SaaS Solutions */}
-    <motion.div
-      style={{ y: y1 }}
-      initial={{ opacity: 0, scale: 0.9, y: 40 }}
-      animate={{ opacity: 1, scale: 1, y: 0 }}
-      transition={{ duration: 1.4 }}
-      className="relative group overflow-hidden rounded-2xl shadow-2xl border border-white/10 w-40 h-40 md:w-64 md:h-64"
-    >
-      <img
-        src="https://images.unsplash.com/photo-1621036579842-9080c7119f67?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2670"
-        alt="SaaS Solutions"
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 rotate-1"
-      />
-      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center">
-        <p className="text-white text-sm md:text-base font-medium mb-3">SaaS & Cloud Platforms</p>
-      </div>
-    </motion.div>
-
-    {/* Image 4 - Enterprise Solutions */}
-    <motion.div
-      style={{ y: y1 }}
-      initial={{ opacity: 0, scale: 0.9, y: 40 }}
-      animate={{ opacity: 1, scale: 1, y: 0 }}
-      transition={{ duration: 1.6 }}
-      className="relative group overflow-hidden rounded-2xl shadow-2xl border border-white/10 w-40 h-40 md:w-64 md:h-64"
-    >
-      <img
-        src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=1740"
-        alt="Enterprise Web Apps"
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 -rotate-3"
-      />
-      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center">
-        <p className="text-white text-sm md:text-base font-medium mb-3">Enterprise Web Solutions</p>
-      </div>
-    </motion.div>
-  </div>
-
-  {/* Floating glow effect */}
-  <div className="absolute -bottom-12 right-8 w-44 h-44 bg-blue-500/20 blur-3xl rounded-full animate-pulse"></div>
-</div>
+      {/* Floating glow effect */}
+        <div className="absolute -bottom-12 right-8 w-64 h-64 bg-blue-500/20 blur-3xl rounded-full animate-pulse"></div>
+        </div>
 
           
 
-      </div>
+</div>
 
     </section>
   );

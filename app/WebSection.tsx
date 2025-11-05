@@ -41,10 +41,10 @@ export function WebSection() {
           transition={{ duration: 1 }}
           className="w-full md:w-1/2 flex justify-center md:justify-end"
         >
-          <div className="rotate-0 sm:rotate-3 overflow-hidden rounded-2xl shadow-xl w-full sm:w-[80%] md:w-[550px] lg:w-[600px] max-w-[90%]">
+          <div className="rotate-0 overflow-hidden rounded-2xl shadow-xl w-full sm:w-[80%] md:w-[550px] lg:w-[600px] max-w-[90%]">
             <img
-              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
-              alt="Showcase"
+              src="/BrandGrow.png"
+              alt="We Grow Brands Online"
               className="w-full h-auto object-cover"
             />
           </div>
