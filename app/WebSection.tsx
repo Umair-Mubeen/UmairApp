@@ -91,6 +91,7 @@ export function WebSection() {
               h-24 sm:h-36 md:h-44 lg:h-56 
               bg-blue-500/20 blur-3xl rounded-full animate-pulse"
           />
+          
         </div>
       </div>
     </section>
