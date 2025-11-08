@@ -90,9 +90,9 @@ export function About() {
         className="relative flex flex-wrap justify-center gap-10 mt-20 z-10"
       >
         {[
-          "/About/CreativeStragety.png",
-          "/About/InnovateDesign.png",
-          "/About/Tech.png",
+          "/About/CS.png",
+          "/About/ID.png",
+          "/About/TP.png",
         ].map((img, index) => (
           <motion.div
             key={index}

@@ -5,10 +5,10 @@ import Image from "next/image";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
 const teamMembers = [
-  { name: "Kathryn Murphy", role: "Chief Executive Officer", image: "/ceo.jpg", socials: { facebook: "#", twitter: "#", linkedin: "#", instagram: "#" } },
-  { name: "Aston Turner", role: "Chief Technical Operator", image: "/cto.jpg", socials: { facebook: "#", twitter: "#", linkedin: "#", instagram: "#" } },
-  { name: "Peter Handscomb", role: "Full Stack Developer", image: "/developer.jpg", socials: { facebook: "#", twitter: "#", linkedin: "#", instagram: "#" } },
-  { name: "Jason Behrendorff", role: "Graphic Designer", image: "/gdesigner.jpg", socials: { facebook: "#", twitter: "#", linkedin: "#", instagram: "#" } },
+  { name: "Kathryn Murphy", role: "Chief Executive Officer", image: "/Team/ceo.jpg", socials: { facebook: "#", twitter: "#", linkedin: "#", instagram: "#" } },
+  { name: "Aston Turner", role: "Chief Technical Operator", image: "/Team/cto.jpg", socials: { facebook: "#", twitter: "#", linkedin: "#", instagram: "#" } },
+  { name: "Peter Handscomb", role: "Full Stack Developer", image: "/Team/developer.jpg", socials: { facebook: "#", twitter: "#", linkedin: "#", instagram: "#" } },
+  { name: "Jason Behrendorff", role: "Graphic Designer", image: "/Team/gdesigner.jpg", socials: { facebook: "#", twitter: "#", linkedin: "#", instagram: "#" } },
 ];
 
 export function TeamSection() {
