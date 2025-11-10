@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -7,124 +7,206 @@ import { motion } from "framer-motion";
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
+  const mobileMenuRef = useRef<HTMLUListElement | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = ["home", "about", "services", "casestudy","Team", "contact"];
-      for (let id of sections) {
-        const el = document.getElementById(id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= 100 && rect.bottom >= 100) {
-            setActive(id);
-            break;
-          }
-        }
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const sections = ["home", "about", "services", "casestudy", "team", "contact"];
+    const observers: IntersectionObserver[] = [];
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActive(id);
+            }
+          });
+        },
+        { root: null, rootMargin: "-40% 0px -40% 0px", threshold: 0.01 }
+      );
+      obs.observe(el);
+      observers.push(obs);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
   }, []);
 
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (!menuOpen) return;
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(e.target as Node)) {
+        setMenuOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [menuOpen]);
+
+  const handleNavClick = (e: React.MouseEvent, href: string) => {
+    const id = href.replace("#", "");
+    const el = document.getElementById(id);
+    if (el) {
+      e.preventDefault();
+      setMenuOpen(false);
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      (el as HTMLElement).focus?.();
+      return;
+    }
+  };
+
+  const navItems = [
+    { id: "about", label: "About", href: "#about" },
+    { id: "services", label: "Services", href: "#services" },
+    { id: "casestudy", label: "CaseStudy", href: "#casestudy" },
+    { id: "team", label: "Team", href: "#team" },
+    { id: "contact", label: "Contact", href: "#contact" },
+  ];
+
   return (
-    <div className="fixed top-0 left-0 w-full z-50 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900">
-<nav className="flex justify-between items-center px-6 py-5 md:py-4 border-b-[0.5px] border-white">
-        {/* Logo */}
-        <motion.div whileHover={{ rotate: -5, scale: 1.05 }}>
-          <Link href={"/"}>
-          <Image
-            src="/web.png"
-            alt="Logo"
-            width={160}
-            height={40}
-            className="w-auto h-10"
-          />
-          </Link>
-          
-        </motion.div>
+    <header
+      role="banner"
+      className="fixed top-0 left-0 w-full z-50 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 backdrop-blur-sm"
+    >
+      <nav
+        className="w-full flex items-center justify-between px-4 sm:px-6 md:px-8 py-3 md:py-4 border-b border-white/10"
+        aria-label="Main navigation"
+      >
+        {/* Left section — Logo */}
+        <div className="flex items-center">
+          <motion.div whileHover={{ rotate: -5, scale: 1.04 }} className="flex items-center">
+            <Link href="/" aria-label="Homepage">
+              <Image
+                src="/web.webp"
+                alt="Lumixync logo"
+                width={160}
+                height={40}
+                priority
+                className="w-auto h-10"
+              />
+            </Link>
+          </motion.div>
+        </div>
 
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-8 text-white font-medium">
-          {[
-            { id: "about", label: "About", href: "#about" },
-            { id: "services", label: "Services", href: "#services" },
-            { id: "casestudy", label: "CaseStudy", href: "#casestudy" },
-            { id: "team", label: "Team", href: "#team" },
-            { id: "contact", label: "Contact", href: "#contact" },
-          ].map((item) => (
-            <motion.li
-              key={item.id}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              className={`cursor-pointer transition-colors ${
-                active === item.id ? "text-white-400" : "text-white"
-              }`}
-            >
-              <Link href={item.href}>{item.label}</Link>
+        {/* Right section — Desktop menu + Mobile toggle */}
+        <div className="flex items-center">
+          {/* Desktop Menu */}
+          <ul
+            className="hidden md:flex gap-8 text-white font-medium items-center"
+            role="menubar"
+            aria-label="Desktop menu"
+          >
+            {navItems.map((item) => (
+              <motion.li
+                key={item.id}
+                whileHover={{ scale: 1.06 }}
+                whileTap={{ scale: 0.97 }}
+                className={`cursor-pointer transition-colors focus:outline-none ${
+                  active === item.id ? "text-blue-300" : "text-white/95"
+                }`}
+                role="none"
+              >
+                <Link
+                  href={item.href}
+                  tabIndex={0}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  aria-current={active === item.id ? "page" : undefined}
+                  className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 rounded px-1"
+                >
+                  {item.label}
+                </Link>
+              </motion.li>
+            ))}
+
+            {/* CTA on desktop */}
+            <motion.li whileHover={{ scale: 1.03 }} className="ml-2" role="none">
+              <a
+                href="#contact"
+                onClick={(e) => handleNavClick(e, "#contact")}
+                className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-lg font-semibold shadow-md hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                role="menuitem"
+              >
+                Request a Quote
+              </a>
             </motion.li>
-          ))}
-        </ul>
+          </ul>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-white focus:outline-none"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          {menuOpen ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-7 h-7"
+          {/* Mobile Menu Button */}
+          <div className="md:hidden flex items-center ml-2">
+            <button
+              aria-controls="mobile-menu"
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen((s) => !s)}
+              className="p-2 rounded-md text-white hover:text-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-7 h-7"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-              />
-            </svg>
-          )}
-        </button>
+              {menuOpen ? (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+              )}
+            </button>
+          </div>
+        </div>
 
         {/* Mobile Dropdown */}
         {menuOpen && (
           <motion.ul
-            className="absolute top-20 left-0 w-full bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 flex flex-col items-center gap-6 py-8 text-white font-medium md:hidden"
-            initial={{ opacity: 0, y: -20 }}
+            id="mobile-menu"
+            ref={mobileMenuRef}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.28 }}
+            className="absolute top-[64px] left-0 w-full bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 flex flex-col items-center gap-4 py-6 text-white font-medium md:hidden border-t border-white/5 shadow-lg"
+            role="menu"
+            aria-label="Mobile menu"
           >
-            {["About", "Services", "CaseStudy", "Team", "Contact"].map((label, index) => (
+            {navItems.map((item, index) => (
               <motion.li
-                key={label}
-                whileHover={{ scale: 1.1, color: "#60A5FA" }}
-                transition={{ delay: index * 0.1 }}
-                onClick={() => setMenuOpen(false)}
+                key={item.id}
+                whileHover={{ scale: 1.03 }}
+                transition={{ delay: index * 0.03 }}
+                className="w-full text-center"
+                role="none"
               >
-                <a href={`#${label.toLowerCase()}`}>{label}</a>
+                <a
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className={`block w-full py-3 ${active === item.id ? "text-blue-200 font-semibold" : "text-white/95"}`}
+                  role="menuitem"
+                >
+                  {item.label}
+                </a>
               </motion.li>
             ))}
+
+            <motion.li className="w-full" role="none">
+              <a
+                href="#contact"
+                onClick={(e) => handleNavClick(e, "#contact")}
+                className="block w-11/12 mx-auto text-center bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-3 rounded-lg font-semibold shadow-md"
+                role="menuitem"
+              >
+                Request a Quote
+              </a>
+            </motion.li>
           </motion.ul>
         )}
       </nav>
-    </div>
+    </header>
   );
 }
 

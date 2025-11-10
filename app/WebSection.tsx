@@ -7,14 +7,23 @@ export function WebSection() {
   const y2 = useTransform(scrollY, [0, 500], [0, -80]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-16 text-white overflow-hidden bg-gradient-to-br from-indigo-950 via-purple-900 to-blue-900">
+    <section
+      id="web"
+      aria-label="Web Design and Branding Section"
+      className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-16 text-white overflow-hidden 
+      bg-gradient-to-br from-indigo-950 via-purple-900 to-blue-900 scroll-smooth selection:bg-purple-600 selection:text-white"
+    >
       {/* Floating Tech Strip */}
       <div className="absolute top-4 left-0 w-full flex justify-center lg:justify-start gap-3 sm:gap-5 z-10 px-4 sm:px-6 lg:px-16">
-        <div className="flex items-center gap-3 sm:gap-5 overflow-x-auto py-2 lg:py-0 no-scrollbar">
+        <div
+          className="flex items-center gap-3 sm:gap-5 overflow-x-auto py-2 lg:py-0 no-scrollbar"
+          aria-label="Technologies Used"
+        >
           {["WordPress", "Shopify", "Next.js", "React", "Framer"].map((name) => (
             <div
               key={name}
-              className="flex-shrink-0 opacity-80 bg-white/10 px-3 sm:px-4 py-2 rounded-md text-xs sm:text-sm md:text-base backdrop-blur-md"
+              className="flex-shrink-0 opacity-80 bg-white/10 px-3 sm:px-4 py-2 rounded-md text-xs sm:text-sm md:text-base 
+              backdrop-blur-md hover:opacity-100 transition-opacity duration-300"
             >
               {name}
             </div>
@@ -53,21 +62,41 @@ export function WebSection() {
             Custom Websites, Branding & Digital Marketing that amplify your digital presence.
           </motion.p>
 
-          <motion.a
-            href="#contact"
-            className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-semibold shadow-lg shadow-blue-900/30 transition-transform"
-            whileHover={{ scale: 1.07 }}
-            whileTap={{ scale: 0.97 }}
-          >
-            Request a Quote
-          </motion.a>
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+            <motion.a
+              href="#contact"
+              aria-label="Request a Quote"
+              className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 
+              text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-semibold shadow-lg shadow-blue-900/30 
+              transition-transform focus:outline-none focus:ring-4 focus:ring-blue-700/50"
+              whileHover={{ scale: 1.07 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              Request a Quote
+            </motion.a>
+
+            <motion.a
+              href="#portfolio"
+              aria-label="View Portfolio"
+              className="inline-block border border-white/20 hover:border-white/50 text-white px-6 sm:px-8 py-2.5 sm:py-3 
+              rounded-xl font-semibold transition-all hover:bg-white/10"
+              whileHover={{ scale: 1.07 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              View Portfolio
+            </motion.a>
+          </div>
         </div>
 
-        {/* Right: Floating Image */}
+        {/* Right: Floating Optimized Image */}
         <div className="relative flex items-center justify-center w-full mt-10 lg:mt-0">
-          <div className="absolute inset-0 bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20 blur-3xl rounded-full" />
+          <div
+            className="absolute inset-0 bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20 blur-3xl rounded-full"
+            aria-hidden="true"
+          />
 
-          <motion.div
+          <motion.picture
             style={{ y: y1 }}
             initial={{ opacity: 0, scale: 0.9, y: 40 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -77,21 +106,25 @@ export function WebSection() {
               aspect-[4/3] md:aspect-[5/4] lg:aspect-[16/10]
               max-w-full z-10 transition-all duration-700"
           >
+            {/* Serve optimized WebP image */}
+            <source srcSet="/Brand.webp" type="image/webp" />
             <img
               src="/Brand.webp"
               alt="We Grow Brands Online"
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover md:object-contain xl:object-cover transition-transform duration-700 group-hover:scale-105"
             />
-          </motion.div>
+          </motion.picture>
 
           <motion.div
             style={{ y: y2 }}
+            aria-hidden="true"
             className="absolute -bottom-6 sm:-bottom-8 right-4 sm:right-8 
               w-24 sm:w-36 md:w-44 lg:w-56 
               h-24 sm:h-36 md:h-44 lg:h-56 
               bg-blue-500/20 blur-3xl rounded-full animate-pulse"
           />
-          
         </div>
       </div>
     </section>

@@ -2,6 +2,7 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -9,70 +10,118 @@ import "swiper/css/navigation";
 export function Services() {
   const services = [
     { title: "Web Design", desc: "Beautiful, responsive, and user-focused web design that leaves a lasting impression." },
-    { title: "Web Development", desc: "Full-stack solutions with modern frameworks like Next.js, React, and Node.js." },
-    { title: "UI/UX Design", desc: "Interactive, human-centered designs that enhance user engagement and satisfaction." },
-    { title: "E-Commerce Solutions", desc: "Custom online stores with secure payment gateways and seamless checkout." },
-    { title: "SEO Optimization", desc: "Boost visibility, rankings, and organic traffic with proven SEO strategies." },
-    { title: "Web Maintenance", desc: "Continuous updates, security patches, and performance optimization for your site." },
-    { title: "Brand Identity", desc: "Build a cohesive, memorable brand identity that resonates with your audience." },
-    { title: "API Integration", desc: "Connect apps and systems seamlessly through modern API solutions." },
-    { title: "Performance Optimization", desc: "Lightning-fast loading times and optimized code for a superior user experience." },
+    { title: "Web Development", desc: "Full-stack solutions using modern frameworks like Next.js, React, and Node.js." },
+    { title: "UI/UX Design", desc: "Interactive, human-centered designs that enhance engagement and satisfaction." },
+    { title: "E-Commerce Solutions", desc: "Custom online stores with secure payments, seamless checkout, and conversion focus." },
+    { title: "SEO Optimization", desc: "Boost rankings, visibility, and traffic with strategic SEO implementation." },
+    { title: "Web Maintenance", desc: "Ongoing updates, security, and performance optimization for peace of mind." },
+    { title: "Brand Identity", desc: "Craft a cohesive, memorable identity that connects with your audience." },
+    { title: "API Integration", desc: "Seamlessly connect systems and apps through reliable API solutions." },
+    { title: "Performance Optimization", desc: "Faster load times, optimized code, and superior user experience delivery." },
   ];
 
   return (
     <section
       id="services"
-      className="relative min-h-screen flex flex-col items-center justify-center px-6 md:px-12 py-16 text-white text-center overflow-hidden"
+      aria-label="Our Digital Services"
+      className="relative min-h-screen flex flex-col items-center justify-center px-6 md:px-12 py-24 text-white text-center overflow-hidden 
+      bg-gradient-to-br from-indigo-950 via-purple-900 to-blue-900 scroll-smooth selection:bg-purple-600 selection:text-white"
     >
-      {/* Section Title */}
-      <h1 className="relative z-10 text-4xl md:text-5xl font-extrabold leading-tight mb-12">
-        Our <span className="text-white-400">Services</span>
-      </h1>
+      {/* Background Glow Overlay */}
+      <div
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.07),_transparent_70%)] blur-3xl z-0"
+        aria-hidden="true"
+      />
+
+      {/* Section Header */}
+      <motion.header
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="relative z-10 mb-12"
+      >
+        <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-purple-300 to-pink-400 drop-shadow-lg mb-4">
+          Our Services
+        </h1>
+        <p className="text-gray-300 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          Everything you need to design, build, and grow your digital presence — crafted with creativity, performance, and precision.
+        </p>
+      </motion.header>
 
       {/* Swiper Carousel */}
-      <div className="relative z-10 max-w-6xl w-full">
+      <motion.div
+        className="relative z-10 max-w-6xl w-full"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={30}
           slidesPerView={1}
           loop={true}
           autoplay={{
-            delay: 2500,
+            delay: 3000,
             disableOnInteraction: false,
           }}
+          pagination={{ clickable: true }}
           navigation={{
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
           }}
-          pagination={{ clickable: true }}
           breakpoints={{
             640: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
           }}
-          className="py-10 border-white-400"
+          className="py-10"
         >
           {services.map((service, index) => (
             <SwiperSlide key={index}>
-              <div className="p-8 bg-white/10 border border-white-400/20 rounded-2xl shadow-lg backdrop-blur-md hover:bg-white/20 hover:border-white-300 transition duration-300 flex flex-col justify-center items-center text-center w-full h-72">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
+              <motion.article
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 200 }}
+                className="group relative p-8 bg-white/10 border border-white/10 rounded-2xl shadow-lg backdrop-blur-xl 
+                hover:border-blue-400/40 hover:shadow-[0_0_45px_rgba(59,130,246,0.25)] transition-all duration-500 
+                flex flex-col justify-center items-center text-center h-72"
+                aria-label={service.title}
+              >
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white group-hover:text-blue-300 transition-colors">
                   {service.title}
                 </h2>
-                <p className="text-gray-200 leading-relaxed text-sm md:text-base max-w-xs">
+                <p className="text-gray-300 leading-relaxed text-sm md:text-base max-w-xs">
                   {service.desc}
                 </p>
-              </div>
+              </motion.article>
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+
+        {/* Swiper Navigation Arrows */}
+        <div
+          className="swiper-button-prev !text-white !font-extrabold !text-4xl hover:scale-110 transition-transform duration-300 
+          hover:text-blue-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+          aria-label="Previous slide"
+        />
+        <div
+          className="swiper-button-next !text-white !font-extrabold !text-4xl hover:scale-110 transition-transform duration-300 
+          hover:text-blue-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+          aria-label="Next slide"
+        />
+      </motion.div>
 
       {/* CTA Button */}
-      <div className="relative z-10 mt-12">
-        <button className="bg-blue-500 hover:bg-blue-600 text-white px-10 py-3 rounded-lg font-semibold hover:shadow-[0_0_25px_rgba(59,130,246,0.6)] transition">
-          Explore More Services
-        </button>
-      </div>
+      <motion.a
+        href="#contact"
+        whileHover={{ scale: 1.07 }}
+        whileTap={{ scale: 0.97 }}
+        transition={{ type: "spring", stiffness: 300 }}
+        className="relative z-10 mt-16 inline-block bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 
+        text-white px-10 py-3 rounded-xl font-semibold shadow-[0_0_25px_rgba(59,130,246,0.4)] transition-all duration-300 
+        focus:outline-none focus:ring-4 focus:ring-blue-700/40"
+      >
+        Explore More Services
+      </motion.a>
     </section>
   );
 }

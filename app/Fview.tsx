@@ -11,7 +11,7 @@ export function Fview() {
         <div>
             <Link href="/" className="flex items-center gap-2">
               <Image
-                src="/web.png"
+                src="/web.webp"
                 alt="Logo"
                 width={300}
                 height={4000}

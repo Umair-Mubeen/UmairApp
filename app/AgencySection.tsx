@@ -7,14 +7,23 @@ export function AgencySection() {
   const y2 = useTransform(scrollY, [0, 500], [0, -80]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-12 text-white overflow-hidden bg-gradient-to-br from-indigo-950 via-purple-900 to-blue-900">
+    <section
+      id="agency"
+      aria-label="Creative Web Agency Section"
+      className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-12 text-white overflow-hidden 
+      bg-gradient-to-br from-indigo-950 via-purple-900 to-blue-900 scroll-smooth selection:bg-purple-600 selection:text-white"
+    >
       {/* Top Brand Strip */}
       <div className="absolute top-4 left-0 w-full flex justify-center lg:justify-start gap-4 sm:gap-6 z-10 px-4 sm:px-6 lg:px-12">
-        <div className="flex items-center gap-4 sm:gap-6 overflow-x-auto py-2 lg:py-0 no-scrollbar">
+        <div
+          className="flex items-center gap-4 sm:gap-6 overflow-x-auto py-2 lg:py-0 no-scrollbar"
+          aria-label="Brands Worked With"
+        >
           {["Sony", "HP", "P&G", "NFL", "Forbes"].map((name) => (
             <div
               key={name}
-              className="flex-shrink-0 opacity-80 bg-white/10 px-3 sm:px-4 py-2 rounded-md text-xs sm:text-sm md:text-base backdrop-blur-md"
+              className="flex-shrink-0 opacity-80 bg-white/10 px-3 sm:px-4 py-2 rounded-md text-xs sm:text-sm md:text-base 
+              backdrop-blur-md hover:opacity-100 transition-opacity duration-300"
             >
               {name}
             </div>
@@ -27,7 +36,7 @@ export function AgencySection() {
         {/* Left Column - Text */}
         <div className="text-center lg:text-left max-w-2xl mx-auto lg:mx-0 px-2 sm:px-4 md:px-8">
           <motion.h2
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 sm:mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-extrabold leading-tight mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
@@ -41,11 +50,14 @@ export function AgencySection() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            We craft beautiful, high-performance websites with a focus on measurable results.
-            Our process is collaborative, transparent, and tailored to your brand.
+            We craft beautiful, high-performance websites focused on measurable results. 
+            Our process is transparent, collaborative, and designed to scale your brand.
           </motion.p>
 
-          <ul className="space-y-3 sm:space-y-4 mb-6 text-sm sm:text-base">
+          <ul
+            aria-label="Agency Key Features"
+            className="space-y-3 sm:space-y-4 mb-6 text-sm sm:text-base"
+          >
             {[
               "Custom design tailored to your brand and goals",
               "Fast, SEO-friendly development using modern stacks",
@@ -58,31 +70,51 @@ export function AgencySection() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 + i * 0.1, duration: 0.4 }}
               >
-                <span className="mt-0.5 text-green-400 text-lg sm:text-xl">✔</span>
+                <span className="mt-0.5 text-white-400 text-lg sm:text-xl" aria-hidden="true">
+                  ✔
+                </span>
                 <span>{item}</span>
               </motion.li>
             ))}
           </ul>
 
-          <div className="mt-4 sm:mt-6">
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap justify-center lg:justify-start gap-4 mt-4 sm:mt-6">
             <motion.a
               href="#contact"
-              className="inline-block bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-semibold shadow-lg shadow-blue-900/30 transition-transform"
+              aria-label="Get in Touch with Agency"
+              className="inline-block bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 
+              text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-semibold shadow-lg shadow-blue-900/30 
+              transition-transform focus:outline-none focus:ring-4 focus:ring-blue-700/50"
               whileHover={{ scale: 1.07 }}
               whileTap={{ scale: 0.97 }}
             >
               Get in Touch
             </motion.a>
+
+            <motion.a
+              href="#services"
+              aria-label="View Our Services"
+              className="inline-block border border-white/20 hover:border-white/50 text-white px-6 sm:px-8 py-2.5 sm:py-3 
+              rounded-xl font-semibold transition-all hover:bg-white/10"
+              whileHover={{ scale: 1.07 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              Our Services
+            </motion.a>
           </div>
         </div>
 
-        {/* Right Column - Floating Image */}
+        {/* Right Column - Optimized Floating Image */}
         <div className="relative flex items-center justify-center w-full mt-10 lg:mt-0">
           {/* Background Glow */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20 blur-3xl rounded-full" />
+          <div
+            className="absolute inset-0 bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20 blur-3xl rounded-full"
+            aria-hidden="true"
+          />
 
-          {/* Floating Showcase Image */}
-          <motion.div
+          {/* Optimized WebP Showcase */}
+          <motion.picture
             style={{ y: y1 }}
             initial={{ opacity: 0, scale: 0.9, y: 40 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -92,16 +124,20 @@ export function AgencySection() {
               aspect-[4/3] md:aspect-[5/4] lg:aspect-[16/10]
               max-w-full z-10 transition-all duration-700"
           >
+            <source srcSet="/WebAgency.webp" type="image/webp" />
             <img
               src="/WebAgency.webp"
-              alt="Custom Web Solutions"
+              alt="Creative Web Agency delivering custom digital solutions"
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover md:object-contain xl:object-cover transition-transform duration-700 group-hover:scale-105"
             />
-          </motion.div>
+          </motion.picture>
 
           {/* Floating Glow Orb */}
           <motion.div
             style={{ y: y2 }}
+            aria-hidden="true"
             className="absolute -bottom-6 sm:-bottom-8 right-4 sm:right-8 
               w-24 sm:w-36 md:w-44 lg:w-56 
               h-24 sm:h-36 md:h-44 lg:h-56 
