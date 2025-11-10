@@ -106,15 +106,20 @@ export function Navbar() {
           ))}
 
           {/* CTA */}
-          <motion.li whileHover={{ scale: 1.03 }} className="ml-2">
-            <a
-              href="#contact"
-              onClick={(e) => handleNavClick(e, "#contact")}
-              className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-lg font-semibold shadow-md hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
-            >
-              Request a Quote
-            </a>
-          </motion.li>
+            <motion.a
+    href="#contact"
+    aria-label="Request a Quote"
+    className="inline-block border border-white text-white 
+               px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-semibold 
+               transition-all duration-300 ease-in-out
+               hover:bg-[#2563eb]/20 hover:border-[#3b82f6] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]
+               focus:outline-none focus:ring-2 focus:ring-[#3b82f6]/50"
+    whileHover={{ scale: 1.07 }}
+    whileTap={{ scale: 0.97 }}
+  >
+    Request a Quote
+  </motion.a>
+ 
         </ul>
 
         {/* Mobile Menu Button */}

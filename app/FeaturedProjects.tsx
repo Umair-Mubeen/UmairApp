@@ -107,16 +107,18 @@ export function FeaturedProjects() {
       {/* CTA */}
       <div className="mt-16 text-center">
         <motion.a
-          href="#portfolio"
-          aria-label="View Full Portfolio"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.97 }}
-          className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 
-          text-white font-semibold px-8 py-3 rounded-xl shadow-lg shadow-blue-900/30 transition-transform focus:outline-none 
-          focus:ring-4 focus:ring-blue-700/50"
-        >
-          View Full Portfolio
-        </motion.a>
+    href="#"
+    aria-label="View Services"
+    className="inline-block border border-white text-white 
+               px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-semibold 
+               transition-all duration-300 ease-in-out
+               hover:bg-[#2563eb]/20 hover:border-[#3b82f6] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]
+               focus:outline-none focus:ring-2 focus:ring-[#3b82f6]/50"
+    whileHover={{ scale: 1.07 }}
+    whileTap={{ scale: 0.97 }}
+  >
+    View Full Portfolio
+  </motion.a>
       </div>
     </section>
   );

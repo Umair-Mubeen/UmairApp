@@ -79,31 +79,38 @@ export function AgencySection() {
             ))}
           </ul>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap justify-center lg:justify-start gap-4 mt-4 sm:mt-6">
-            <motion.a
-              href="#contact"
-              aria-label="Get in Touch with Agency"
-              className="inline-block bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 
-              text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-semibold shadow-lg shadow-blue-900/30 
-              transition-transform focus:outline-none focus:ring-4 focus:ring-blue-700/50"
-              whileHover={{ scale: 1.07 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              Get in Touch
-            </motion.a>
+          <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+  <motion.a
+    href="#contact"
+    aria-label="Get In Touch"
+    className="inline-block border border-white text-white 
+               px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-semibold 
+               transition-all duration-300 ease-in-out
+               hover:bg-[#2563eb]/20 hover:border-[#3b82f6] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]
+               focus:outline-none focus:ring-2 focus:ring-[#3b82f6]/50"
+    whileHover={{ scale: 1.07 }}
+    whileTap={{ scale: 0.97 }}
+  >
+    Get in Touch
+  </motion.a>
 
-            <motion.a
-              href="#services"
-              aria-label="View Our Services"
-              className="inline-block border border-white/20 hover:border-white/50 text-white px-6 sm:px-8 py-2.5 sm:py-3 
-              rounded-xl font-semibold transition-all hover:bg-white/10"
-              whileHover={{ scale: 1.07 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              Our Services
-            </motion.a>
-          </div>
+  <motion.a
+    href="#services"
+    aria-label="View Services"
+    className="inline-block border border-white text-white 
+               px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-semibold 
+               transition-all duration-300 ease-in-out
+               hover:bg-[#2563eb]/20 hover:border-[#3b82f6] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]
+               focus:outline-none focus:ring-2 focus:ring-[#3b82f6]/50"
+    whileHover={{ scale: 1.07 }}
+    whileTap={{ scale: 0.97 }}
+  >
+    View Services
+  </motion.a>
+</div>
+
+
+
         </div>
 
         {/* Right Column - Optimized Floating Image */}

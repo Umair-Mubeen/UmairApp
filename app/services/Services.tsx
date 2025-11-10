@@ -111,18 +111,8 @@ export function Services() {
       </motion.div>
 
       {/* CTA Button */}
-      <motion.a
-        href="#contact"
-        whileHover={{ scale: 1.07 }}
-        whileTap={{ scale: 0.97 }}
-        transition={{ type: "spring", stiffness: 300 }}
-        className="relative z-10 mt-16 inline-block bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 
-        text-white px-10 py-3 rounded-xl font-semibold shadow-[0_0_25px_rgba(59,130,246,0.4)] transition-all duration-300 
-        focus:outline-none focus:ring-4 focus:ring-blue-700/40"
-      >
-        Explore More Services
-      </motion.a>
-    </section>
+      
+ </section>
   );
 }
 

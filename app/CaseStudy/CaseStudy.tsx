@@ -67,12 +67,19 @@ export function CaseStudy() {
             Result: <span className="text-white">40,000+ active members in 6 months</span>
           </h3>
 
-          <Link
-            href="#contact"
-            className="inline-block bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-semibold py-3 px-6 rounded-xl shadow-md transition-transform hover:scale-105"
-          >
-            Request a Quote
-          </Link>
+          <motion.a
+              href="#contact"
+              aria-label="Request a Quote"
+              className="inline-block border border-white text-white 
+                         px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-semibold 
+                         transition-all duration-300 ease-in-out
+                         hover:bg-[#2563eb]/20 hover:border-[#3b82f6] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]
+                         focus:outline-none focus:ring-2 focus:ring-[#3b82f6]/50"
+              whileHover={{ scale: 1.07 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              Request a Quote
+            </motion.a>
         </motion.div>
 
         {/* Hero Images */}
@@ -217,14 +224,19 @@ export function CaseStudy() {
         {/* CTA */}
         <div className="relative mt-16 text-center">
           <motion.a
-            href="#contact"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="inline-block bg-gradient-to-r from-blue-400 to-purple-400 text-indigo-950 font-bold py-3 px-8 rounded-full shadow-lg hover:opacity-90 transition"
-          >
-            Tell Us About Your Project
-          </motion.a>
+    href="#contact"
+    aria-label="Request a Quote"
+    className="inline-block border border-white text-white 
+               px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-semibold 
+               transition-all duration-300 ease-in-out
+               hover:bg-[#2563eb]/20 hover:border-[#3b82f6] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]
+               focus:outline-none focus:ring-2 focus:ring-[#3b82f6]/50"
+    whileHover={{ scale: 1.07 }}
+    whileTap={{ scale: 0.97 }}
+  >
+        Tell Us About Your Project
+        
+  </motion.a>
         </div>
       </section>
 
@@ -235,7 +247,7 @@ export function CaseStudy() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold mb-12 bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent"
+            className="text-4xl md:text-5xl font-bold mb-12  text-white bg-clip-text text-transparent"
           >
             The Results
           </motion.h2>
@@ -247,7 +259,7 @@ export function CaseStudy() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.2, duration: 0.7 }}
-                className="relative p-[2px] rounded-2xl bg-gradient-to-tr from-blue-400/60 via-purple-400/40 to-transparent shadow-2xl hover:shadow-blue-400/40 transition"
+                className="relative p-[2px] rounded-2xl shadow-2xl hover:shadow-blue-400/40 transition"
               >
                 <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 h-full flex flex-col justify-center">
                   <p className="text-5xl font-extrabold mb-3 drop-shadow-[0_0_10px_rgba(147,197,253,0.5)]">
@@ -267,12 +279,20 @@ export function CaseStudy() {
         <p className="mb-6 text-gray-200">
           Let’s build a high-performing digital experience for your brand.
         </p>
-        <Link
-          href="#contact"
-          className="bg-white text-indigo-700 px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition"
-        >
-          Let’s Talk
-        </Link>
+
+        <motion.a
+            href="#contact"
+            aria-label="Request a Quote"
+            className="inline-block border border-white text-white 
+                       px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-semibold 
+                       transition-all duration-300 ease-in-out
+                       hover:bg-[#2563eb]/20 hover:border-[#3b82f6] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]
+                       focus:outline-none focus:ring-2 focus:ring-[#3b82f6]/50"
+            whileHover={{ scale: 1.07 }}
+            whileTap={{ scale: 0.97 }}
+          >
+           Let’s Talk
+         </motion.a>
       </section>
     </section>
   );

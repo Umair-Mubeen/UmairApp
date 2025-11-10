@@ -62,32 +62,37 @@ export function WebSection() {
           >
             Custom Websites, Branding & Digital Marketing that amplify your digital presence.
           </motion.p>
+            {/* CTA Buttons */}
+<div className="flex flex-wrap justify-center lg:justify-start gap-4">
+  <motion.a
+    href="#contact"
+    aria-label="Request a Quote"
+    className="inline-block border border-white text-white 
+               px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-semibold 
+               transition-all duration-300 ease-in-out
+               hover:bg-[#2563eb]/20 hover:border-[#3b82f6] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]
+               focus:outline-none focus:ring-2 focus:ring-[#3b82f6]/50"
+    whileHover={{ scale: 1.07 }}
+    whileTap={{ scale: 0.97 }}
+  >
+    Request a Quote
+  </motion.a>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-            <motion.a
-              href="#contact"
-              aria-label="Request a Quote"
-              className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 
-              text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-semibold shadow-lg shadow-blue-900/30 
-              transition-transform focus:outline-none focus:ring-4 focus:ring-blue-700/50"
-              whileHover={{ scale: 1.07 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              Request a Quote
-            </motion.a>
+  <motion.a
+    href="#"
+    aria-label="View Portfolio"
+    className="inline-block border border-white text-white 
+               px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-semibold 
+               transition-all duration-300 ease-in-out
+               hover:bg-[#2563eb]/20 hover:border-[#3b82f6] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]
+               focus:outline-none focus:ring-2 focus:ring-[#3b82f6]/50"
+    whileHover={{ scale: 1.07 }}
+    whileTap={{ scale: 0.97 }}
+  >
+    View Portfolio
+  </motion.a>
+</div>
 
-            <motion.a
-              href="#portfolio"
-              aria-label="View Portfolio"
-              className="inline-block border border-white/20 hover:border-white/50 text-white px-6 sm:px-8 py-2.5 sm:py-3 
-              rounded-xl font-semibold transition-all hover:bg-white/10"
-              whileHover={{ scale: 1.07 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              View Portfolio
-            </motion.a>
-          </div>
         </div>
 
         {/* Right: Floating Optimized Image */}
