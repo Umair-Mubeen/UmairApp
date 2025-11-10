@@ -15,7 +15,7 @@ export function AgencySection() {
       scroll-smooth selection:bg-purple-600 selection:text-white"
     >
       {/* Top Brand Strip */}
-      <div className="absolute top-4 left-0 w-full flex justify-center lg:justify-start gap-4 sm:gap-6 z-10 px-4 sm:px-6 lg:px-12">
+      {/* <div className="absolute top-4 left-0 w-full flex justify-center lg:justify-start gap-4 sm:gap-6 z-10 px-4 sm:px-6 lg:px-12">
         <div
           className="flex items-center gap-4 sm:gap-6 overflow-x-auto py-2 lg:py-0 no-scrollbar"
           aria-label="Brands Worked With"
@@ -30,7 +30,7 @@ export function AgencySection() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Main Layout */}
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-[1fr_0.9fr] gap-10 sm:gap-16 items-center z-10 py-24 sm:py-32 lg:py-40">

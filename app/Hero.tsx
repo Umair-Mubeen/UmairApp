@@ -20,8 +20,8 @@ const Fview = dynamic(() => import("./Fview").then(mod => mod.Fview), { ssr: fal
 export default function Hero() {
   // 🔹 Optional: theme switcher for background gradient transitions
   const themes = [
-    "bg-gradient-to-br from-indigo-950 via-purple-900 to-blue-900",
-    //"bg-gradient-to-br from-[#0f172a] via-[#1e1b4b] to-[#312e81]"
+    //"bg-gradient-to-br from-indigo-950 via-purple-900 to-blue-900",
+    "bg-gradient-to-br from-[#0f172a] via-[#1e1b4b] to-[#312e81]"
 
   ];
   const [themeIndex, setThemeIndex] = useState(0);
