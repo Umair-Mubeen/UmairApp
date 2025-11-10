@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     siteName: "LUMIXYNC",
     images: [
       {
-        url: "https://www.lumixync.com/web.webp", // 🖼️ your preview image (1200x630 recommended)
+        url: "https://www.lumixync.com/WebLogo.png", // 🖼️ your preview image (1200x630 recommended)
         width: 1200,
         height: 630,
         alt: "Lumixync Logo and Website Preview",
