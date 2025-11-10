@@ -68,7 +68,7 @@ export function Navbar() {
 
   return (
     <header
-      className="fixed top-0 left-0 w-full z-50 bg-gradient-to-br from-[#0f172a] via-[#1e1b4b] to-[#312e81] backdrop-blur-sm"
+      className="fixed top-0 left-0 w-full z-50 bg-gradient-to-br from-[#000000] via-[#0a0a0a] to-[#1a1a1a] backdrop-blur-sm"
     >
       <nav
         className="w-full flex items-center justify-between px-4 sm:px-6 md:px-8 py-3 md:py-4 border-b border-white/10"

@@ -21,7 +21,8 @@ export default function Hero() {
   // 🔹 Optional: theme switcher for background gradient transitions
   const themes = [
     //"bg-gradient-to-br from-indigo-950 via-purple-900 to-blue-900",
-    "bg-gradient-to-br from-[#0f172a] via-[#1e1b4b] to-[#312e81]"
+    //"bg-gradient-to-br from-[#0f172a] via-[#1e1b4b] to-[#312e81]"
+    "bg-gradient-to-br from-[#000000] via-[#0a0a0a] to-[#1a1a1a]"
 
   ];
   const [themeIndex, setThemeIndex] = useState(0);
