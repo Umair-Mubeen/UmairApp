@@ -49,14 +49,14 @@ export function About() {
           <h1 className="text-5xl md:text-6xl font-extrabold font-semibold text-white drop-shadow-lg">
             About
           </h1>
-          <Image
+          <Image 
            src="/WebLogo.png"
-       alt="Lumixync logo"
+           alt="Lumixync logo"
             width={130}
             height={45}
             priority
             quality={80}
-            className="w-auto h-auto"
+            className="w-auto h-auto mt-4"
           />
         </div>
 

@@ -66,13 +66,14 @@ export function TeamSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-3 pb-10">
           <Image
-            src="/web.webp"
-            alt="Lumixync Logo"
+             src="/WebLogo.png"
+           
+        alt="Lumixync Logo"
             width={200}
             height={50}
             priority
             quality={80}
-            className="w-auto bg-transparent"
+            className="w-auto bg-transparent mt-3"
           />
           <h1 className="text-5xl md:text-6xl font-bold leading-tight text-white">
             Team
