@@ -36,7 +36,7 @@ export function WebExperienceSection() {
       id="experience"
       aria-label="Custom Web Design Experiences"
       className="relative min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-12 text-white overflow-hidden 
-      bg-gradient-to-br from-indigo-950 via-purple-900 to-blue-900 scroll-smooth selection:bg-purple-600 selection:text-white"
+      scroll-smooth selection:bg-purple-600 selection:text-white"
     >
       {/* Left Text Section */}
       <div className="flex-1 max-w-xl text-center md:text-left mb-12 md:mb-0">

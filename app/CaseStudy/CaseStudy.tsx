@@ -36,7 +36,7 @@ export function CaseStudy() {
     <section
       id="casestudy"
       ref={sectionRef}
-      className="text-white bg-gradient-to-br from-indigo-950 via-purple-900 to-blue-900"
+      className="text-white"
     >
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20 md:py-32 px-6 md:px-12 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto">

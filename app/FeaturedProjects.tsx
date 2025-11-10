@@ -8,7 +8,7 @@ export function FeaturedProjects() {
       id="featured-projects"
       aria-label="Featured Website Design Projects"
       className="relative min-h-screen text-white flex flex-col items-center justify-center px-6 py-24 overflow-hidden 
-      bg-gradient-to-br from-indigo-950 via-purple-900 to-blue-900 scroll-smooth selection:bg-purple-600 selection:text-white"
+      scroll-smooth selection:bg-purple-600 selection:text-white"
     >
       {/* Title Section */}
       <div className="text-center mb-10 max-w-3xl mx-auto px-2">

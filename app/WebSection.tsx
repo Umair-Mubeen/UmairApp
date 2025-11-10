@@ -12,7 +12,7 @@ export function WebSection() {
       id="web"
       aria-label="Web Design and Branding Section"
       className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-16 text-white overflow-hidden 
-      bg-gradient-to-br from-indigo-950 via-purple-900 to-blue-900 scroll-smooth selection:bg-purple-600 selection:text-white"
+      scroll-smooth selection:bg-purple-600 selection:text-white"
     >
       {/* Floating Tech Strip */}
       <div className="absolute top-4 left-0 w-full flex justify-center lg:justify-start gap-3 sm:gap-5 z-10 px-4 sm:px-6 lg:px-16">

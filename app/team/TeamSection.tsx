@@ -60,7 +60,7 @@ export function TeamSection() {
     <section
       id="team"
       aria-label="Meet Our Team"
-      className="py-16 bg-gradient-to-br from-indigo-950 via-purple-900 to-blue-900 text-white"
+      className="py-16 text-white"
     >
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}

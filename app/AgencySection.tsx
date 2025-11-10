@@ -12,7 +12,7 @@ export function AgencySection() {
       id="agency"
       aria-label="Creative Web Agency Section"
       className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-12 text-white overflow-hidden 
-      bg-gradient-to-br from-indigo-950 via-purple-900 to-blue-900 scroll-smooth selection:bg-purple-600 selection:text-white"
+      scroll-smooth selection:bg-purple-600 selection:text-white"
     >
       {/* Top Brand Strip */}
       <div className="absolute top-4 left-0 w-full flex justify-center lg:justify-start gap-4 sm:gap-6 z-10 px-4 sm:px-6 lg:px-12">

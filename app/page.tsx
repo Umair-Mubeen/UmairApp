@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import Hero from "./Hero"; // import your client component
 
 export const metadata: Metadata = {
-  title: "Lumixync — Creative Web Design Agency",
+  title: "LUMIXYNC — Creative Web Design Agency",
   description:
     "We build modern, high-performance websites and digital experiences that help brands grow online.",
   openGraph: {
-    title: "Lumixync — Creative Web Design Agency",
+    title: "LUMIXYNC — Creative Web Design Agency",
     description:
       "We build modern, high-performance websites and digital experiences that help brands grow online.",
     url: "https://www.lumixync.com",

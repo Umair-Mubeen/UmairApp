@@ -25,7 +25,7 @@ export function Services() {
       id="services"
       aria-label="Our Digital Services"
       className="relative min-h-screen flex flex-col items-center justify-center px-6 md:px-12 py-24 text-white text-center overflow-hidden 
-      bg-gradient-to-br from-indigo-950 via-purple-900 to-blue-900 scroll-smooth selection:bg-purple-600 selection:text-white"
+      scroll-smooth selection:bg-purple-600 selection:text-white"
     >
       {/* Background Glow Overlay */}
       <div
