@@ -78,7 +78,7 @@ export function WebSection() {
               max-w-full z-10 transition-all duration-700"
           >
             <img
-              src="/Brand.png"
+              src="/Brand.webp"
               alt="We Grow Brands Online"
               className="w-full h-full object-cover md:object-contain xl:object-cover transition-transform duration-700 group-hover:scale-105"
             />

@@ -93,7 +93,7 @@ export function AgencySection() {
               max-w-full z-10 transition-all duration-700"
           >
             <img
-              src="/WebAgency.png"
+              src="/WebAgency.webp"
               alt="Custom Web Solutions"
               className="w-full h-full object-cover md:object-contain xl:object-cover transition-transform duration-700 group-hover:scale-105"
             />

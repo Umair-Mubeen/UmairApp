@@ -34,9 +34,9 @@ export function FeaturedProjects() {
       {/* Floating Project Images */}
       <div className="relative flex flex-wrap justify-center gap-10 md:gap-16">
         {[ 
-          "/FeatureProjects/B2B.png",
-          "/FeatureProjects/B2C.png",
-          "/FeatureProjects/ECommerce.png"
+          "/FeatureProjects/B2B.webp",
+          "/FeatureProjects/B2C.webp",
+          "/FeatureProjects/ECommerce.webp"
   
         ].map((img, index) => (
           <motion.div

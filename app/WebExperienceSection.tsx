@@ -5,17 +5,17 @@ import { useEffect, useState } from "react";
 export function WebExperienceSection() {
   const slides = [
     {
-      src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=80",
+      src: "/WebSolution.webp",
       title: "Modern Business Websites",
       desc: "High-performance and visually stunning experiences for your brand.",
     },
     {
-      src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80",
+      src: "CreatePortfolio.webp",
       title: "Creative Portfolios",
       desc: "Showcase your work with elegant, custom web design.",
     },
     {
-      src: "/ESolutions.jpg",
+      src: "/ESolutions.webp",
       title: "E-Commerce Solutions",
       desc: "Sell more online with fast, engaging, and mobile-optimized stores.",
     },
