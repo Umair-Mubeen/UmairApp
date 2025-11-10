@@ -1,6 +1,7 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export function WebExperienceSection() {
   const slides = [
@@ -34,7 +35,8 @@ export function WebExperienceSection() {
     <section
       id="experience"
       aria-label="Custom Web Design Experiences"
-      className="relative min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-12 text-white overflow-hidden bg-gradient-to-br from-indigo-950 via-purple-900 to-blue-900 scroll-smooth selection:bg-purple-600 selection:text-white"
+      className="relative min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-12 text-white overflow-hidden 
+      bg-gradient-to-br from-indigo-950 via-purple-900 to-blue-900 scroll-smooth selection:bg-purple-600 selection:text-white"
     >
       {/* Left Text Section */}
       <div className="flex-1 max-w-xl text-center md:text-left mb-12 md:mb-0">
@@ -88,22 +90,22 @@ export function WebExperienceSection() {
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.9, ease: "easeInOut" }}
               >
-                <picture>
-                  <source srcSet={slide.src} type="image/webp" />
-                  <img
+                {/* Optimized Image */}
+                <div className="relative w-full h-full">
+                  <Image
                     src={slide.src}
                     alt={slide.title}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover object-center transition-transform duration-700"
+                    fill
+                    sizes="(max-width: 640px) 90vw, (max-width: 1024px) 70vw, 600px"
+                    quality={70}
+                    priority={i === 0} // First slide loads immediately for faster LCP
+                    loading={i === 0 ? "eager" : "lazy"}
+                    className="object-cover object-center transition-transform duration-700"
                   />
-                </picture>
+                </div>
 
                 {/* Overlay */}
-                <div
-                  className="absolute inset-0 bg-black/40"
-                  aria-hidden="true"
-                />
+                <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
 
                 {/* Text Overlay */}
                 <figcaption
@@ -130,7 +132,9 @@ export function WebExperienceSection() {
               onClick={() => setIndex(i)}
               aria-label={`Go to slide ${i + 1}`}
               className={`w-3 h-3 rounded-full transition-all ${
-                index === i ? "bg-blue-400 scale-110" : "bg-white/40 hover:bg-white/70"
+                index === i
+                  ? "bg-blue-400 scale-110"
+                  : "bg-white/40 hover:bg-white/70"
               }`}
             />
           ))}

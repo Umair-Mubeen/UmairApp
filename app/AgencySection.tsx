@@ -1,5 +1,6 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
 export function AgencySection() {
   const { scrollY } = useScroll();
@@ -50,7 +51,7 @@ export function AgencySection() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            We craft beautiful, high-performance websites focused on measurable results. 
+            We craft beautiful, high-performance websites focused on measurable results.
             Our process is transparent, collaborative, and designed to scale your brand.
           </motion.p>
 
@@ -113,8 +114,8 @@ export function AgencySection() {
             aria-hidden="true"
           />
 
-          {/* Optimized WebP Showcase */}
-          <motion.picture
+          {/* Optimized Image using Next.js */}
+          <motion.div
             style={{ y: y1 }}
             initial={{ opacity: 0, scale: 0.9, y: 40 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -124,15 +125,16 @@ export function AgencySection() {
               aspect-[4/3] md:aspect-[5/4] lg:aspect-[16/10]
               max-w-full z-10 transition-all duration-700"
           >
-            <source srcSet="/WebAgency.webp" type="image/webp" />
-            <img
+            <Image
               src="/WebAgency.webp"
               alt="Creative Web Agency delivering custom digital solutions"
+              fill
+              quality={70}
+              sizes="(max-width: 640px) 90vw, (max-width: 1024px) 70vw, 550px"
               loading="lazy"
-              decoding="async"
-              className="w-full h-full object-cover md:object-contain xl:object-cover transition-transform duration-700 group-hover:scale-105"
+              className="object-cover md:object-contain xl:object-cover transition-transform duration-700 group-hover:scale-105"
             />
-          </motion.picture>
+          </motion.div>
 
           {/* Floating Glow Orb */}
           <motion.div

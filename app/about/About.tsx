@@ -20,9 +20,9 @@ export function About() {
   ];
 
   const images = [
-    "/About/CS.png",
-    "/About/ID.png",
-    "/About/TP.png",
+    { src: "/About/CS.png", alt: "Creative Strategy Showcase" },
+    { src: "/About/ID.png", alt: "Innovative Design Showcase" },
+    { src: "/About/TP.png", alt: "Modern Tech Stack Showcase" },
   ];
 
   return (
@@ -55,6 +55,7 @@ export function About() {
             width={130}
             height={45}
             priority
+            quality={80}
             className="w-auto h-auto"
           />
         </div>
@@ -112,18 +113,17 @@ export function About() {
             animate={{ y: [0, -10, 0] }}
             className="w-[260px] sm:w-[300px] md:w-[340px] rounded-2xl overflow-hidden shadow-xl hover:scale-105 transition-transform duration-500 border border-white/10"
           >
-            <picture>
-              <source srcSet={img} type="image/webp" />
+            <div className="relative w-full h-[200px] sm:h-[240px] md:h-[260px]">
               <Image
-                src={img}
-                alt={`Lumixync Core Value Showcase ${index + 1}`}
-                width={340}
-                height={200}
+                src={img.src}
+                alt={img.alt}
+                fill
+                quality={70}
                 loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 640px) 80vw, (max-width: 1024px) 40vw, 340px"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
-            </picture>
+            </div>
           </motion.figure>
         ))}
       </motion.div>

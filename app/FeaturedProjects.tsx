@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function FeaturedProjects() {
   return (
@@ -58,17 +59,17 @@ export function FeaturedProjects() {
           {
             src: "/FeatureProjects/B2B.webp",
             alt: "B2B Website Project",
-            caption: "B2B Corporate Web Design",
+            caption: "",
           },
           {
             src: "/FeatureProjects/B2C.webp",
             alt: "B2C Website Project",
-            caption: "B2C Retail Experience",
+            caption: "",
           },
           {
             src: "/FeatureProjects/ECommerce.webp",
             alt: "Ecommerce Website Project",
-            caption: "E-Commerce Growth Solution",
+            caption: "",
           },
         ].map((project, index) => (
           <motion.figure
@@ -79,17 +80,20 @@ export function FeaturedProjects() {
             className="relative w-[260px] sm:w-[300px] md:w-[340px] rounded-2xl overflow-hidden shadow-xl 
               hover:shadow-2xl group transition-transform duration-500 transform hover:-translate-y-2"
           >
-            <picture>
-              <source srcSet={project.src} type="image/webp" />
-              <img
+            {/* Optimized Image */}
+            <div className="relative w-full h-[260px] sm:h-[300px] md:h-[340px]">
+              <Image
                 src={project.src}
                 alt={project.alt}
+                fill
+                quality={70}
                 loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 640px) 80vw, (max-width: 1024px) 40vw, 340px"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
-            </picture>
+            </div>
 
+            {/* Caption */}
             <figcaption
               className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent 
               text-white p-4 text-sm sm:text-base font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500"

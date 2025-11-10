@@ -1,5 +1,6 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
 export function WebSection() {
   const { scrollY } = useScroll();
@@ -45,7 +46,7 @@ export function WebSection() {
           </motion.p>
 
           <motion.h1
-            className="font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-6xl leading-[1.15] mb-4 sm:mb-6 break-words"
+            className="font-extrabold text-2xl sm:text-3xl md:text-2xl lg:text-6xl leading-[1.15] mb-4 sm:mb-6 break-words"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -96,7 +97,7 @@ export function WebSection() {
             aria-hidden="true"
           />
 
-          <motion.picture
+          <motion.div
             style={{ y: y1 }}
             initial={{ opacity: 0, scale: 0.9, y: 40 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -106,16 +107,17 @@ export function WebSection() {
               aspect-[4/3] md:aspect-[5/4] lg:aspect-[16/10]
               max-w-full z-10 transition-all duration-700"
           >
-            {/* Serve optimized WebP image */}
-            <source srcSet="/Brand.webp" type="image/webp" />
-            <img
+            {/* Optimized Responsive Image */}
+            <Image
               src="/Brand.webp"
               alt="We Grow Brands Online"
+              fill
+              sizes="(max-width: 640px) 90vw, (max-width: 1024px) 70vw, 550px"
+              quality={70}
               loading="lazy"
-              decoding="async"
-              className="w-full h-full object-cover md:object-contain xl:object-cover transition-transform duration-700 group-hover:scale-105"
+              className="object-cover md:object-contain xl:object-cover transition-transform duration-700 group-hover:scale-105"
             />
-          </motion.picture>
+          </motion.div>
 
           <motion.div
             style={{ y: y2 }}

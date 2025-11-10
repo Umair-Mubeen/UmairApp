@@ -71,35 +71,40 @@ export function CaseStudy() {
           </Link>
         </motion.div>
 
-        {/* Images */}
+        {/* Hero Images */}
         <motion.div
           className="relative md:w-1/2 mt-12 md:mt-0 flex flex-col sm:flex-row md:flex-col gap-6 justify-center items-center md:items-end"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9 }}
         >
+          {/* Primary Hero Image (LCP) */}
           <div className="relative w-full sm:w-3/4 md:w-full max-w-md aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-r from-white/60 via-white/30 to-transparent p-[2px] shadow-xl hover:scale-[1.03] transition-transform">
             <Image
               src="/HP.webp"
               alt="HP Customer Loyalty Portal"
               fill
               priority
+              quality={75}
+              sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 500px"
               className="object-cover rounded-2xl"
             />
           </div>
 
+          {/* Secondary Image */}
           <div className="relative w-32 sm:w-40 md:w-48 aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-purple-400/40 to-blue-300/30 p-[2px] shadow-lg hover:scale-[1.03] transition-transform -mt-16 md:-mt-20 md:-mr-10">
             <Image
               src="/WebProject.webp"
               alt="HP Project Snapshot"
               fill
+              quality={70}
               loading="lazy"
+              sizes="(max-width: 640px) 40vw, 200px"
               className="object-cover rounded-2xl"
             />
           </div>
         </motion.div>
 
-        {/* Glow */}
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-indigo-700/20 via-transparent to-purple-700/30 blur-3xl pointer-events-none" />
       </section>
 
@@ -146,10 +151,12 @@ export function CaseStudy() {
             className="relative w-full h-80 md:h-[450px]"
           >
             <Image
-              src = "/WebSolution.webp"
+              src="/WebSolution.webp"
               alt="HP Web Development Challenges"
               fill
+              quality={70}
               loading="lazy"
+              sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 500px"
               className="object-contain drop-shadow-[0_0_20px_rgba(147,197,253,0.5)] rounded-xl"
             />
           </motion.div>
@@ -206,7 +213,9 @@ export function CaseStudy() {
                     src="/HPSolution.webp"
                     alt={`HP Solution Preview ${i}`}
                     fill
+                    quality={70}
                     loading="lazy"
+                    sizes="(max-width: 640px) 90vw, 500px"
                     className="object-cover rounded-2xl"
                   />
                 </div>
