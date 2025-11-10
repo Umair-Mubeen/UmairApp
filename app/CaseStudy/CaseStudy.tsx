@@ -33,7 +33,11 @@ export function CaseStudy() {
   ];
 
   return (
-    <section id="casestudy" ref={sectionRef} className="text-white">
+    <section
+      id="casestudy"
+      ref={sectionRef}
+      className="text-white bg-gradient-to-br from-indigo-950 via-purple-900 to-blue-900"
+    >
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20 md:py-32 px-6 md:px-12 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto">
         {/* Text */}
@@ -78,7 +82,6 @@ export function CaseStudy() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9 }}
         >
-          {/* Primary Hero Image (LCP) */}
           <div className="relative w-full sm:w-3/4 md:w-full max-w-md aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-r from-white/60 via-white/30 to-transparent p-[2px] shadow-xl hover:scale-[1.03] transition-transform">
             <Image
               src="/HP.webp"
@@ -86,12 +89,10 @@ export function CaseStudy() {
               fill
               priority
               quality={75}
-              sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 500px"
               className="object-cover rounded-2xl"
             />
           </div>
 
-          {/* Secondary Image */}
           <div className="relative w-32 sm:w-40 md:w-48 aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-purple-400/40 to-blue-300/30 p-[2px] shadow-lg hover:scale-[1.03] transition-transform -mt-16 md:-mt-20 md:-mr-10">
             <Image
               src="/WebProject.webp"
@@ -99,18 +100,14 @@ export function CaseStudy() {
               fill
               quality={70}
               loading="lazy"
-              sizes="(max-width: 640px) 40vw, 200px"
               className="object-cover rounded-2xl"
             />
           </div>
         </motion.div>
-
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-indigo-700/20 via-transparent to-purple-700/30 blur-3xl pointer-events-none" />
       </section>
 
       {/* Challenge Section */}
-      <section className="relative overflow-hidden py-24 px-6 bg-gradient-to-b from-indigo-950 via-purple-900 to-blue-900">
-        <div className="absolute inset-0 opacity-30 bg-[radial-gradient(ellipse_at_top_right,_rgba(99,102,241,0.4),_transparent_60%)]" />
+      <section className="relative overflow-hidden py-24 px-6">
         <div className="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -156,7 +153,6 @@ export function CaseStudy() {
               fill
               quality={70}
               loading="lazy"
-              sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 500px"
               className="object-contain drop-shadow-[0_0_20px_rgba(147,197,253,0.5)] rounded-xl"
             />
           </motion.div>
@@ -164,8 +160,7 @@ export function CaseStudy() {
       </section>
 
       {/* Solution Section */}
-      <section className="relative overflow-hidden py-24 px-6 text-white">
-        <div className="absolute inset-0 opacity-30 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(147,197,253,0.4),_transparent_70%)]" />
+      <section className="relative overflow-hidden py-24 px-6">
         <div className="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -178,6 +173,7 @@ export function CaseStudy() {
             <p className="text-gray-200 mb-8 leading-relaxed text-lg">
               Lumixync developed an integrated web ecosystem that automated validation, rewards, and communications.
             </p>
+
             <div className="space-y-6">
               {deliverables.map((item, i) => (
                 <motion.div
@@ -187,9 +183,7 @@ export function CaseStudy() {
                   transition={{ delay: i * 0.1 }}
                   className="backdrop-blur-md bg-white/10 border border-white/10 rounded-2xl p-5 shadow-lg hover:shadow-blue-500/20 transition"
                 >
-                  <h3 className="text-xl font-semibold mb-2 text-white">
-                    {item.title}
-                  </h3>
+                  <h3 className="text-xl font-semibold mb-2 text-white">{item.title}</h3>
                   <p className="text-gray-100 leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
@@ -204,10 +198,7 @@ export function CaseStudy() {
             className="relative w-full h-[500px] flex flex-col justify-between space-y-8"
           >
             {[1, 2].map((i) => (
-              <div
-                key={i}
-                className="p-[2px] rounded-2xl bg-gradient-to-r from-transparent via-white/50 to-white/80 shadow-2xl"
-              >
+              <div key={i} className="p-[2px] rounded-2xl bg-gradient-to-r from-transparent via-white/50 to-white/80 shadow-2xl">
                 <div className="relative w-full h-52 rounded-2xl overflow-hidden">
                   <Image
                     src="/HPSolution.webp"
@@ -215,7 +206,6 @@ export function CaseStudy() {
                     fill
                     quality={70}
                     loading="lazy"
-                    sizes="(max-width: 640px) 90vw, 500px"
                     className="object-cover rounded-2xl"
                   />
                 </div>
@@ -238,9 +228,8 @@ export function CaseStudy() {
         </div>
       </section>
 
-      {/* Results */}
-      <section className="relative overflow-hidden py-24 px-6 text-white text-center">
-        <div className="absolute inset-0 opacity-30 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(147,197,253,0.4),_transparent_70%)]" />
+      {/* Results Section */}
+      <section className="relative overflow-hidden py-24 px-6 text-center">
         <div className="relative max-w-6xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 40 }}
@@ -273,7 +262,7 @@ export function CaseStudy() {
       </section>
 
       {/* Footer CTA */}
-      <section className="text-white py-16 text-center">
+      <section className="py-16 text-center">
         <h3 className="text-2xl font-semibold mb-4">Want results like these?</h3>
         <p className="mb-6 text-gray-200">
           Let’s build a high-performing digital experience for your brand.
