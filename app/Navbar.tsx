@@ -78,7 +78,7 @@ export function Navbar() {
         <motion.div whileHover={{ rotate: -5, scale: 1.04 }}>
           <Link href="/" aria-label="Homepage">
             <Image
-              src="/web.webp"
+              src="/WebLogo.png"
               alt="Lumixync logo"
               width={160}
               height={40}

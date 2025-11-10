@@ -40,7 +40,7 @@ export function Services() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="relative z-10 mb-12"
       >
-        <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-purple-300 to-pink-400 drop-shadow-lg mb-4">
+        <h1 className="text-5xl md:text-6xl font-extrabold font-semibold text-white drop-shadow-lg mb-4">
           Our Services
         </h1>
         <p className="text-gray-300 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">

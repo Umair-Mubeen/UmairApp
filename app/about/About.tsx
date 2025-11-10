@@ -46,12 +46,12 @@ export function About() {
         className="relative z-10 text-center mb-16"
       >
         <div className="flex justify-center items-center space-x-4 mb-6">
-          <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-purple-300 to-pink-400 drop-shadow-lg">
+          <h1 className="text-5xl md:text-6xl font-extrabold font-semibold text-white drop-shadow-lg">
             About
           </h1>
           <Image
-            src="/web.webp"
-            alt="Lumixync logo"
+           src="/WebLogo.png"
+       alt="Lumixync logo"
             width={130}
             height={45}
             priority
@@ -62,7 +62,7 @@ export function About() {
 
         <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
           At <span className="font-semibold text-white">LUMIXYNC</span>, we design, develop, and deliver powerful digital experiences.  
-          By blending <span className="text-blue-400 font-medium">creativity</span>, <span className="text-purple-400 font-medium">strategy</span>, and <span className="text-pink-400 font-medium">technology</span>,  
+          By blending <span className="font-semibold text-white font-medium">creativity</span>, <span className="font-semibold text-white font-medium">strategy</span>, and <span className="font-semibold text-white font-medium">technology</span>,  
           we help brands grow online — beautifully and effectively.
         </p>
       </motion.header>
