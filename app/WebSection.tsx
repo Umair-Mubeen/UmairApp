@@ -102,16 +102,16 @@ export function WebSection() {
             aria-hidden="true"
           />
 
-          <video
+          {/* <video
   src="/video.mp4"
   autoPlay
   loop
   muted
   playsInline
   className="w-full h-auto rounded-xl shadow-lg"
-></video>
+></video> */}
 
-{/* <motion.div
+<motion.div
             style={{ y: y1 }}
             initial={{ opacity: 0, scale: 0.9, y: 40 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -122,7 +122,8 @@ export function WebSection() {
               max-w-full z-10 transition-all duration-700"
           >
             <Image
-              src="/Brand.webp"
+              //src="/Brand.webp"
+              src="/B.png"
               alt="We Grow Brands Online"
               fill
               sizes="(max-width: 640px) 90vw, (max-width: 1024px) 70vw, 550px"
@@ -139,7 +140,7 @@ export function WebSection() {
               w-24 sm:w-36 md:w-44 lg:w-56 
               h-24 sm:h-36 md:h-44 lg:h-56 
               bg-blue-500/20 blur-3xl rounded-full animate-pulse"
-          /> */}
+          />
           
         </div>
       </div>
