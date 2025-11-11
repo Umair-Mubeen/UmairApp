@@ -167,7 +167,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.28 }}
-            className="absolute top-[64px] left-0 w-full bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 flex flex-col items-center gap-4 py-6 text-white font-medium md:hidden border-t border-white/5 shadow-lg"
+            className="absolute top-[64px] left-0 w-full bg-gradient-to-br from-[#000000] via-[#0a0a0a] to-[#1a1a1a] flex flex-col items-center gap-4 py-6 text-white font-medium md:hidden border-t border-white/5 shadow-lg"
           >
             {navItems.map((item, index) => (
               <motion.li key={item.id} whileHover={{ scale: 1.03 }} transition={{ delay: index * 0.03 }}>
