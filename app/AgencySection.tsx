@@ -134,6 +134,7 @@ export function AgencySection() {
           >
             <Image
               src="/WebAgency.webp"
+              //src="/CS3.png"
               alt="Creative Web Agency delivering custom digital solutions"
               fill
               quality={70}
