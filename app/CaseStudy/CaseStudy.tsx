@@ -35,74 +35,92 @@ export function CaseStudy() {
     <section id="casestudy" ref={sectionRef} className="text-white relative">
 
       {/* ===================== HERO SECTION ===================== */}
-      <section className="relative overflow-hidden py-20 md:py-32 px-6 md:px-12 max-w-7xl mx-auto">
+    <section className="relative overflow-hidden py-20 md:py-32 px-6 md:px-12">
 
-        {/* ⭐ RIGHT SIDE FULL BACKGROUND (GLOBAL STYLE) */}
-        <div
-          className="absolute right-0 top-0 h-full 
-          w-[380px] sm:w-[500px] md:w-[650px] lg:w-[750px]
-          bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20 
-          blur-[120px] opacity-60 pointer-events-none"
+  {/* 🔥 FULL RIGHT SIDE BACKGROUND GLOW */}
+  <div
+    className="absolute right-0 top-0 h-full 
+    w-[420px] sm:w-[550px] md:w-[700px] lg:w-[880px]
+    bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20 
+    blur-[130px] opacity-60 pointer-events-none"
+  />
+
+  {/* 🌫 Soft radial overlay (prevents white flash) */}
+  <div
+    className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.06),_transparent_70%)] pointer-events-none"
+  />
+
+  {/* CONTENT WRAPPER */}
+  <div className="relative max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-16 z-10">
+
+    {/* ➤ LEFT TEXT SECTION */}
+    <motion.div
+      className="md:w-3/5 lg:w-1/2 text-center md:text-left"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      <p className="uppercase tracking-widest text-indigo-300 font-semibold mb-4">
+        Web Marketing
+      </p>
+
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        HP Customer Loyalty Program Case Study
+      </h1>
+
+      <p className="text-gray-300 text-lg leading-relaxed mb-4 text-justify">
+        HP needed a global rewards program to strengthen loyalty and repeat purchases.
+      </p>
+
+      <p className="text-gray-400 mb-6 text-justify">
+        We delivered a modern web portal, multi-channel communication, and advanced retargeting for measurable impact.
+      </p>
+
+      <h3 className="text-xl font-semibold text-indigo-300 mb-8">
+        Result:{" "}
+        <span className="text-white">40,000+ active members in 6 months</span>
+      </h3>
+
+      <motion.a
+        href="#contact"
+        className="inline-block border border-white text-white px-8 py-3 rounded-xl font-semibold 
+        hover:bg-[#2563eb]/20 hover:border-[#3b82f6] transition-all"
+        whileHover={{ scale: 1.07 }}
+      >
+        Request a Quote
+      </motion.a>
+    </motion.div>
+
+    {/* ➤ RIGHT IMAGE STACK */}
+    <motion.div
+      className="relative w-full md:w-1/2 flex flex-col items-end gap-6"
+      initial={{ opacity: 0, x: 60 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.9 }}
+    >
+      {/* MAIN IMAGE */}
+      <div className="relative w-full max-w-md aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+        <Image
+          src="/HP.webp"
+          alt="HP Customer Loyalty Portal"
+          fill
+          className="object-cover"
         />
+      </div>
 
-        {/* CONTENT */}
-        <div className="relative flex flex-col md:flex-row items-center justify-between z-10">
-          
-          {/* TEXT */}
-          <motion.div
-            className="md:w-3/5 lg:w-2/3 text-center md:text-left"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <p className="uppercase tracking-widest text-indigo-300 font-semibold mb-4">
-              Web Marketing
-            </p>
+      {/* TOP RIGHT SMALL IMAGE (floating) */}
+      <div className="relative w-36 sm:w-44 md:w-48 aspect-square rounded-2xl overflow-hidden shadow-xl -mt-14 md:-mt-20">
+        <Image
+          src="/WebProject.webp"
+          alt="HP Project Snapshot"
+          fill
+          className="object-cover"
+        />
+      </div>
+    </motion.div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              HP Customer Loyalty Program Case Study
-            </h1>
-
-            <p className="text-gray-300 text-lg leading-relaxed mb-4 text-justify">
-              HP needed a global rewards program to strengthen loyalty and repeat purchases.
-            </p>
-
-            <p className="text-gray-400 mb-6 text-justify">
-              We delivered a modern web portal, multi-channel communication, and advanced retargeting for measurable impact.
-            </p>
-
-            <h3 className="text-xl font-semibold text-indigo-300 mb-8">
-              Result: <span className="text-white">40,000+ active members in 6 months</span>
-            </h3>
-
-            <motion.a
-              href="#contact"
-              className="inline-block border border-white text-white px-8 py-3 rounded-xl font-semibold 
-              hover:bg-[#2563eb]/20 hover:border-[#3b82f6] transition-all"
-              whileHover={{ scale: 1.07 }}
-            >
-              Request a Quote
-            </motion.a>
-          </motion.div>
-
-          {/* IMAGES */}
-          <motion.div
-            className="relative w-full md:w-1/2 mt-12 flex flex-col items-end gap-6"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9 }}
-          >
-            <div className="relative w-full max-w-md aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
-              <Image src="/HP.webp" alt="HP Customer Loyalty Portal" fill className="object-cover" />
-            </div>
-
-            <div className="relative w-40 md:w-48 aspect-square rounded-2xl overflow-hidden shadow-lg -mt-14 md:-mt-20">
-              <Image src="/WebProject.webp" alt="HP Project Snapshot" fill className="object-cover" />
-            </div>
-          </motion.div>
-
-        </div>
-      </section>
+  </div>
+</section>
 
       {/* ===================== CHALLENGE SECTION ===================== */}
       <section className="relative overflow-hidden py-24 px-6">
