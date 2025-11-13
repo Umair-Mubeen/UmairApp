@@ -14,28 +14,22 @@ export function AgencySection() {
       className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-12 text-white overflow-hidden 
       scroll-smooth selection:bg-purple-600 selection:text-white"
     >
-      {/* Top Brand Strip */}
-      {/* <div className="absolute top-4 left-0 w-full flex justify-center lg:justify-start gap-4 sm:gap-6 z-10 px-4 sm:px-6 lg:px-12">
-        <div
-          className="flex items-center gap-4 sm:gap-6 overflow-x-auto py-2 lg:py-0 no-scrollbar"
-          aria-label="Brands Worked With"
-        >
-          {["Sony", "HP", "P&G", "NFL", "Forbes"].map((name) => (
-            <div
-              key={name}
-              className="flex-shrink-0 opacity-80 bg-white/10 px-3 sm:px-4 py-2 rounded-md text-xs sm:text-sm md:text-base 
-              backdrop-blur-md hover:opacity-100 transition-opacity duration-300"
-            >
-              {name}
-            </div>
-          ))}
-        </div>
-      </div> */}
+
+      {/* ⭐ FULL RIGHT-SIDE BACKGROUND GLOW */}
+      <motion.div
+        style={{ y: y2 }}
+        aria-hidden="true"
+        className="absolute right-0 top-0 h-full
+        w-[380px] sm:w-[480px] md:w-[620px] lg:w-[700px]
+        bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20
+        blur-[120px] opacity-70 pointer-events-none"
+      />
 
       {/* Main Layout */}
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-[1fr_0.9fr] gap-10 sm:gap-16 items-center z-10 py-24 sm:py-32 lg:py-40">
+        
         {/* Left Column - Text */}
-        <div className="text-center lg:text-left max-w-2xl mx-auto lg:mx-0 px-2 sm:px-4 md:px-8">
+        <div className="relative z-10 text-center lg:text-left max-w-2xl mx-auto lg:mx-0 px-2 sm:px-4 md:px-8">
           <motion.h2
             className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-extrabold leading-tight mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 20 }}
@@ -79,49 +73,41 @@ export function AgencySection() {
             ))}
           </ul>
 
+          {/* CTA Buttons */}
           <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-  <motion.a
-    href="#contact"
-    aria-label="Get In Touch"
-    className="inline-block border border-white text-white 
-               px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-semibold 
-               transition-all duration-300 ease-in-out
-               hover:bg-[#2563eb]/20 hover:border-[#3b82f6] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]
-               focus:outline-none focus:ring-2 focus:ring-[#3b82f6]/50"
-    whileHover={{ scale: 1.07 }}
-    whileTap={{ scale: 0.97 }}
-  >
-    Get in Touch
-  </motion.a>
+            <motion.a
+              href="#contact"
+              aria-label="Get In Touch"
+              className="inline-block border border-white text-white 
+                px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-semibold 
+                transition-all duration-300 ease-in-out
+                hover:bg-[#2563eb]/20 hover:border-[#3b82f6] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]
+                focus:outline-none focus:ring-2 focus:ring-[#3b82f6]/50"
+              whileHover={{ scale: 1.07 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              Get in Touch
+            </motion.a>
 
-  <motion.a
-    href="#services"
-    aria-label="View Services"
-    className="inline-block border border-white text-white 
-               px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-semibold 
-               transition-all duration-300 ease-in-out
-               hover:bg-[#2563eb]/20 hover:border-[#3b82f6] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]
-               focus:outline-none focus:ring-2 focus:ring-[#3b82f6]/50"
-    whileHover={{ scale: 1.07 }}
-    whileTap={{ scale: 0.97 }}
-  >
-    View Services
-  </motion.a>
-</div>
-
-
-
+            <motion.a
+              href="#services"
+              aria-label="View Services"
+              className="inline-block border border-white text-white 
+                px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-semibold 
+                transition-all duration-300 ease-in-out
+                hover:bg-[#2563eb]/20 hover:border-[#3b82f6] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]
+                focus:outline-none focus:ring-2 focus:ring-[#3b82f6]/50"
+              whileHover={{ scale: 1.07 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              View Services
+            </motion.a>
+          </div>
         </div>
 
         {/* Right Column - Optimized Floating Image */}
-        <div className="relative flex items-center justify-center w-full mt-10 lg:mt-0">
-          {/* Background Glow */}
-          <div
-            className="absolute inset-0 bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20 blur-3xl rounded-full"
-            aria-hidden="true"
-          />
+        <div className="relative z-10 flex items-center justify-center w-full mt-10 lg:mt-0">
 
-          {/* Optimized Image using Next.js */}
           <motion.div
             style={{ y: y1 }}
             initial={{ opacity: 0, scale: 0.9, y: 40 }}
@@ -133,18 +119,17 @@ export function AgencySection() {
               max-w-full z-10 transition-all duration-700"
           >
             <Image
-              src="/WebAgency.webp"
-              //src="/CS3.png"
+              src="/CSP.png"
               alt="Creative Web Agency delivering custom digital solutions"
               fill
               quality={70}
               sizes="(max-width: 640px) 90vw, (max-width: 1024px) 70vw, 550px"
               loading="lazy"
-              className="object-cover md:object-contain xl:object-cover transition-transform duration-700 group-hover:scale-105"
+              className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
             />
           </motion.div>
 
-          {/* Floating Glow Orb */}
+          {/* Small Floating Glow Orb */}
           <motion.div
             style={{ y: y2 }}
             aria-hidden="true"

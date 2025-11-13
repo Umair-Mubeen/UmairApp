@@ -1,138 +1,108 @@
 "use client";
-
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export function About() {
-  const values = [
+  const { scrollY } = useScroll();
+  const y1 = useTransform(scrollY, [0, 500], [0, -40]);
+
+  const sections = [
     {
       title: "Creative Strategy",
-      desc: "We craft insight-driven strategies that connect storytelling, design, and performance — turning ideas into brand growth.",
+      desc: `We craft insight-driven strategies that connect storytelling, design, and performance — turning ideas into brand growth.Our approach blends deep market understanding with creative thinking, ensuring your brand communicates with clarity, emotion, and purpose.From positioning to content direction, every strategy is built to engage audiences and drive measurable results.`,
+      img: "/About/CStrategy.png",
     },
     {
       title: "Innovative Design",
-      desc: "Our visuals blend beauty and purpose — clean, modern, and designed to convert at every interaction.",
+      desc: `Our design philosophy is built on clarity, emotion, and conversion.We craft visuals that not only look beautiful but serve a strategic purpose — guiding users, elevating your brand, and creating memorable experiences.Every pixel, color, and interaction is intentional.From high-end UI layouts to immersive brand identities, our designs merge aesthetics with performance to help your brand stand out in crowded digital spaces.`,
+      img: "/About/Innovative.png",
     },
     {
       title: "Modern Tech Stack",
-      desc: "From React to AWS, we engineer seamless digital experiences powered by scalable, high-performing technology.",
+      desc: `We use a powerful, modern technology stack to build fast, scalable, and future-proof digital experiences.From React, Next.js, and TailwindCSS to AWS, databases, automations, and API integrations — everything is engineered for performance and reliability.Whether you're launching a website, dashboard, or custom web application, our tech ensures lightning-fast loading, smooth interactions, and long-term stability.`,
+      img: "/About/Technology.png",
     },
-  ];
-
-  const images = [
-    { src: "/About/CS.png", alt: "Creative Strategy Showcase" },
-    { src: "/About/ID.png", alt: "Innovative Design Showcase" },
-    { src: "/About/TP.png", alt: "Modern Tech Stack Showcase" },
   ];
 
   return (
     <section
       id="about"
-      aria-label="About Lumixync"
-      className="relative min-h-screen flex flex-col items-center justify-center px-6 md:px-12 py-24 text-white overflow-hidden 
-      scroll-smooth selection:bg-purple-600 selection:text-white"
+      className="relative min-h-screen w-full px-6 md:px-12 py-24 text-white overflow-hidden"
     >
-      {/* Background Glow Overlay */}
-      <div
-        className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.08),_transparent_70%)] blur-3xl"
-        aria-hidden="true"
-      />
+      {/* Top Header */}
+      <header className="text-center mb-20">
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="text-5xl md:text-6xl font-extrabold mb-4"
+        >
+          About
+        </motion.h1>
 
-      {/* Header Section */}
-      <motion.header
-        initial={{ opacity: 0, y: -30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative z-10 text-center mb-16"
-      >
-        <div className="flex justify-center items-center space-x-4 mb-6">
-          <h1 className="text-5xl md:text-6xl font-extrabold font-semibold text-white drop-shadow-lg">
-            About
-          </h1>
-          <Image 
-           src="/WebLogo.png"
-           alt="Lumixync logo"
-            width={130}
-            height={45}
-            priority
-            quality={80}
-            className="w-auto h-auto mt-4"
-          />
-        </div>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed"
+        >
+          At <span className="font-semibold text-white">LUMIXYNC</span>, we design, develop, and deliver powerful digital experiences by blending{" "}
+          <span className="text-white font-semibold">creativity</span>,{" "}
+          <span className="text-white font-semibold">strategy</span>, and{" "}
+          <span className="text-white font-semibold">technology</span>.
+        </motion.p>
+      </header>
 
-        <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
-          At <span className="font-semibold text-white">LUMIXYNC</span>, we design, develop, and deliver powerful digital experiences.  
-          By blending <span className="font-semibold text-white font-medium">creativity</span>, <span className="font-semibold text-white font-medium">strategy</span>, and <span className="font-semibold text-white font-medium">technology</span>,  
-          we help brands grow online — beautifully and effectively.
-        </p>
-      </motion.header>
-
-      {/* Core Values */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        variants={{
-          hidden: {},
-          visible: { transition: { staggerChildren: 0.2 } },
-        }}
-        className="grid md:grid-cols-3 gap-8 mt-10 max-w-6xl mx-auto relative z-10"
-      >
-        {values.map((v, i) => (
-          <motion.article
+      {/* Sections */}
+      <div className="flex flex-col gap-28 max-w-7xl mx-auto">
+        {sections.map((item, i) => (
+          <motion.div
             key={i}
-            variants={{
-              hidden: { opacity: 0, y: 30 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="group p-8 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/10 
-            hover:border-blue-400/40 hover:shadow-[0_0_45px_rgba(59,130,246,0.25)] transition-all duration-300"
-            aria-label={v.title}
-          >
-            <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-blue-200 transition-all">
-              {v.title}
-            </h3>
-            <p className="text-gray-300 leading-relaxed">{v.desc}</p>
-          </motion.article>
-        ))}
-      </motion.div>
-
-      {/* Floating Project Images */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative flex flex-wrap justify-center gap-10 mt-20 z-10"
-      >
-        {images.map((img, index) => (
-          <motion.figure
-            key={index}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.25, duration: 0.8 }}
-            animate={{ y: [0, -10, 0] }}
-            className="w-[260px] sm:w-[300px] md:w-[340px] rounded-2xl overflow-hidden shadow-xl hover:scale-105 transition-transform duration-500 border border-white/10"
+            transition={{ duration: 0.9 }}
+            className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-20"
           >
-            <div className="relative w-full h-[200px] sm:h-[240px] md:h-[260px]">
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                quality={70}
-                loading="lazy"
-                sizes="(max-width: 640px) 80vw, (max-width: 1024px) 40vw, 340px"
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
+            {/* LEFT: TEXT */}
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                {item.title}
+              </h2>
+              <p className="text-gray-300 text-lg leading-relaxed whitespace-pre-line text-justify">
+                {item.desc}
+              </p>
             </div>
-          </motion.figure>
+
+            {/* RIGHT: IMAGE with RIGHT GLOW */}
+            <div className="relative flex justify-center lg:justify-end">
+              {/* Right-side glow */}
+              <div
+                className="absolute right-0 top-1/2 -translate-y-1/2
+                w-[280px] sm:w-[350px] md:w-[420px] lg:w-[480px]
+                h-[280px] sm:h-[350px] md:h-[420px] lg:h-[480px]
+                bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20
+                blur-3xl rounded-full"
+              />
+
+              {/* Image */}
+              <motion.div
+                style={{ y: y1 }}
+                className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 
+                w-[80vw] sm:w-[60vw] md:w-[50vw] lg:w-[460px] xl:w-[500px] 
+                aspect-[4/3] max-w-full z-10"
+              >
+                <Image
+                  src={item.img}
+                  alt={item.title}
+                  fill
+                  quality={80}
+                  className="object-fill transition-transform duration-700 hover:scale-105"
+                />
+              </motion.div>
+            </div>
+          </motion.div>
         ))}
-      </motion.div>
-
-      {/* CTA Button */}
-
-
-
- 
+      </div>
     </section>
   );
 }

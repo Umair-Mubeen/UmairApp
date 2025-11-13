@@ -24,12 +24,20 @@ export function Services() {
     <section
       id="services"
       aria-label="Our Digital Services"
-      className="relative min-h-screen flex flex-col items-center justify-center px-6 md:px-12 py-24 text-white text-center overflow-hidden 
+      className="relative min-h-screen flex flex-col items-center justify-center px-6 md:px-12 py-24 text-white text-center overflow-hidden
       scroll-smooth selection:bg-purple-600 selection:text-white"
     >
-      {/* Background Glow Overlay */}
+      {/* 🌟 RIGHT-SIDE GRADIENT GLOW (Same style as your other sections) */}
       <div
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.07),_transparent_70%)] blur-3xl z-0"
+        className="absolute -right-32 top-40 w-[480px] h-[480px]
+        bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20
+        blur-3xl rounded-full pointer-events-none"
+        aria-hidden="true"
+      />
+
+      {/* Light radial overlay */}
+      <div
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.07),_transparent_70%)] z-0"
         aria-hidden="true"
       />
 
@@ -40,7 +48,7 @@ export function Services() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="relative z-10 mb-12"
       >
-        <h1 className="text-5xl md:text-6xl font-extrabold font-semibold text-white drop-shadow-lg mb-4">
+        <h1 className="text-5xl md:text-6xl font-extrabold drop-shadow-lg mb-4">
           Our Services
         </h1>
         <p className="text-gray-300 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
@@ -79,14 +87,14 @@ export function Services() {
           {services.map((service, index) => (
             <SwiperSlide key={index}>
               <motion.article
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 200 }}
-                className="group relative p-8 bg-white/10 border border-white/10 rounded-2xl shadow-lg backdrop-blur-xl 
-                hover:border-blue-400/40 hover:shadow-[0_0_45px_rgba(59,130,246,0.25)] transition-all duration-500 
-                flex flex-col justify-center items-center text-center h-72"
+                whileHover={{ scale: 1.06, y: -6 }}
+                transition={{ type: "spring", stiffness: 220, damping: 15 }}
+                className="group relative p-10 bg-white/10 border border-white/20 rounded-2xl shadow-lg backdrop-blur-xl
+                hover:border-blue-400/60 hover:shadow-[0_0_45px_rgba(59,130,246,0.35)] hover:bg-white/15
+                transition-all duration-500 flex flex-col justify-center items-center text-center h-72"
                 aria-label={service.title}
               >
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white group-hover:text-blue-300 transition-colors">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white group-hover:text-blue-300 transition-colors duration-300">
                   {service.title}
                 </h2>
                 <p className="text-gray-300 leading-relaxed text-sm md:text-base max-w-xs">
@@ -99,20 +107,17 @@ export function Services() {
 
         {/* Swiper Navigation Arrows */}
         <div
-          className="swiper-button-prev !text-white !font-extrabold !text-4xl hover:scale-110 transition-transform duration-300 
-          hover:text-blue-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+          className="swiper-button-prev !text-white !font-extrabold !text-4xl hover:scale-125 transition-transform duration-300 
+          hover:text-blue-300"
           aria-label="Previous slide"
         />
         <div
-          className="swiper-button-next !text-white !font-extrabold !text-4xl hover:scale-110 transition-transform duration-300 
-          hover:text-blue-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+          className="swiper-button-next !text-white !font-extrabold !text-4xl hover:scale-125 transition-transform duration-300 
+          hover:text-blue-300"
           aria-label="Next slide"
         />
       </motion.div>
-
-      {/* CTA Button */}
-      
- </section>
+    </section>
   );
 }
 

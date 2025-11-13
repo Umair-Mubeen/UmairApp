@@ -86,7 +86,16 @@ export default function Hero() {
   );
 }
 
-// ✅ Reusable wrapper for section spacing & border divider
 function Section({ children }: { children: React.ReactNode }) {
-  return <section className="border-t border-white/20">{children}</section>;
+  return (
+    <section className="relative">
+
+      {/* Gradient Border Line */}
+      <div className="absolute inset-x-0 top-0 h-[1px] 
+                      bg-gradient-to-r 
+                      from-indigo-700/40 via-purple-600/40 to-blue-500/40" />
+
+      {children}
+    </section>
+  );
 }

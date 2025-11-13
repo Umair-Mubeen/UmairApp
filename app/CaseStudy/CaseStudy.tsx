@@ -1,7 +1,6 @@
 "use client";
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import Image from "next/image";
 
 export function CaseStudy() {
@@ -33,121 +32,121 @@ export function CaseStudy() {
   ];
 
   return (
-    <section
-      id="casestudy"
-      ref={sectionRef}
-      className="text-white"
-    >
-      {/* Hero Section */}
-      <section className="relative overflow-hidden py-20 md:py-32 px-6 md:px-12 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto">
-        {/* Text */}
-        <motion.div
-          className="md:w-1/2 z-10 text-center md:text-left"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <p className="uppercase tracking-widest text-indigo-300 font-semibold mb-4">
-            Web Marketing
-          </p>
+    <section id="casestudy" ref={sectionRef} className="text-white relative">
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            HP Customer Loyalty Program Case Study
-          </h1>
+      {/* ===================== HERO SECTION ===================== */}
+      <section className="relative overflow-hidden py-20 md:py-32 px-6 md:px-12 max-w-7xl mx-auto">
 
-          <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-4">
-            HP needed a global rewards program to strengthen loyalty and repeat purchases.
-          </p>
+        {/* ⭐ RIGHT SIDE FULL BACKGROUND (GLOBAL STYLE) */}
+        <div
+          className="absolute right-0 top-0 h-full 
+          w-[380px] sm:w-[500px] md:w-[650px] lg:w-[750px]
+          bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20 
+          blur-[120px] opacity-60 pointer-events-none"
+        />
 
-          <p className="text-gray-400 mb-6">
-            We delivered a modern web portal, multi-channel communication, and advanced retargeting for measurable impact.
-          </p>
+        {/* CONTENT */}
+        <div className="relative flex flex-col md:flex-row items-center justify-between z-10">
+          
+          {/* TEXT */}
+          <motion.div
+            className="md:w-3/5 lg:w-2/3 text-center md:text-left"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <p className="uppercase tracking-widest text-indigo-300 font-semibold mb-4">
+              Web Marketing
+            </p>
 
-          <h3 className="text-lg sm:text-xl font-semibold text-indigo-300 mb-8">
-            Result: <span className="text-white">40,000+ active members in 6 months</span>
-          </h3>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              HP Customer Loyalty Program Case Study
+            </h1>
 
-          <motion.a
+            <p className="text-gray-300 text-lg leading-relaxed mb-4 text-justify">
+              HP needed a global rewards program to strengthen loyalty and repeat purchases.
+            </p>
+
+            <p className="text-gray-400 mb-6 text-justify">
+              We delivered a modern web portal, multi-channel communication, and advanced retargeting for measurable impact.
+            </p>
+
+            <h3 className="text-xl font-semibold text-indigo-300 mb-8">
+              Result: <span className="text-white">40,000+ active members in 6 months</span>
+            </h3>
+
+            <motion.a
               href="#contact"
-              aria-label="Request a Quote"
-              className="inline-block border border-white text-white 
-                         px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-semibold 
-                         transition-all duration-300 ease-in-out
-                         hover:bg-[#2563eb]/20 hover:border-[#3b82f6] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]
-                         focus:outline-none focus:ring-2 focus:ring-[#3b82f6]/50"
+              className="inline-block border border-white text-white px-8 py-3 rounded-xl font-semibold 
+              hover:bg-[#2563eb]/20 hover:border-[#3b82f6] transition-all"
               whileHover={{ scale: 1.07 }}
-              whileTap={{ scale: 0.97 }}
             >
               Request a Quote
             </motion.a>
-        </motion.div>
+          </motion.div>
 
-        {/* Hero Images */}
-        <motion.div
-          className="relative md:w-1/2 mt-12 md:mt-0 flex flex-col sm:flex-row md:flex-col gap-6 justify-center items-center md:items-end"
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9 }}
-        >
-          <div className="relative w-full sm:w-3/4 md:w-full max-w-md aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-r from-white/60 via-white/30 to-transparent p-[2px] shadow-xl hover:scale-[1.03] transition-transform">
-            <Image
-              src="/HP.webp"
-              alt="HP Customer Loyalty Portal"
-              fill
-              priority
-              quality={75}
-              className="object-cover rounded-2xl"
-            />
-          </div>
+          {/* IMAGES */}
+          <motion.div
+            className="relative w-full md:w-1/2 mt-12 flex flex-col items-end gap-6"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9 }}
+          >
+            <div className="relative w-full max-w-md aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+              <Image src="/HP.webp" alt="HP Customer Loyalty Portal" fill className="object-cover" />
+            </div>
 
-          <div className="relative w-32 sm:w-40 md:w-48 aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-purple-400/40 to-blue-300/30 p-[2px] shadow-lg hover:scale-[1.03] transition-transform -mt-16 md:-mt-20 md:-mr-10">
-            <Image
-              src="/WebProject.webp"
-              alt="HP Project Snapshot"
-              fill
-              quality={70}
-              loading="lazy"
-              className="object-cover rounded-2xl"
-            />
-          </div>
-        </motion.div>
+            <div className="relative w-40 md:w-48 aspect-square rounded-2xl overflow-hidden shadow-lg -mt-14 md:-mt-20">
+              <Image src="/WebProject.webp" alt="HP Project Snapshot" fill className="object-cover" />
+            </div>
+          </motion.div>
+
+        </div>
       </section>
 
-      {/* Challenge Section */}
+      {/* ===================== CHALLENGE SECTION ===================== */}
       <section className="relative overflow-hidden py-24 px-6">
-        <div className="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+        {/* ⭐ BACKGROUND GLOW RIGHT SIDE */}
+        <div
+          className="absolute right-0 top-0 h-full 
+          w-[380px] sm:w-[500px] md:w-[650px] lg:w-[750px]
+          bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20 
+          blur-[120px] opacity-60 pointer-events-none"
+        />
+
+        <div className="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center z-10">
+          
+          {/* TEXT */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
               The Challenge
             </h2>
-            <p className="text-gray-200 mb-8 leading-relaxed text-lg">
+
+            <p className="text-gray-200 mb-8 leading-relaxed text-lg text-justify">
               HP needed a scalable rewards platform that could handle multiple regions, languages, and retailer integrations.
             </p>
-            <div className="backdrop-blur-md bg-white/10 rounded-2xl p-6 space-y-4 border border-white/10 shadow-xl">
+
+            <div className="bg-white/10 rounded-2xl p-6 space-y-4 border border-white/10">
               {[
                 "Complex brand architecture across regions",
                 "High implementation costs",
                 "Diverse digital ecosystem",
                 "Low initial awareness of the rewards program",
               ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  className="flex items-start gap-3"
-                >
+                <motion.div key={i} className="flex gap-3">
                   <span className="w-2 h-2 mt-2 rounded-full bg-blue-400" />
-                  <p className="text-gray-100">{item}</p>
+                  <p className="text-gray-100 text-justify">{item}</p>
                 </motion.div>
               ))}
             </div>
           </motion.div>
 
+          {/* IMAGE */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -158,96 +157,104 @@ export function CaseStudy() {
               src="/WebSolution.webp"
               alt="HP Web Development Challenges"
               fill
-              quality={70}
-              loading="lazy"
-              className="object-contain drop-shadow-[0_0_20px_rgba(147,197,253,0.5)] rounded-xl"
+              className="object-contain rounded-xl drop-shadow-xl"
             />
           </motion.div>
+
         </div>
       </section>
 
-      {/* Solution Section */}
+      {/* ===================== SOLUTION SECTION ===================== */}
       <section className="relative overflow-hidden py-24 px-6">
-        <div className="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+        {/* ⭐ RIGHT SIDE FULL GLOW */}
+        <div
+          className="absolute right-0 top-0 h-full 
+          w-[380px] sm:w-[500px] md:w-[650px] lg:w-[750px]
+          bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20 
+          blur-[120px] opacity-60 pointer-events-none"
+        />
+
+        <div className="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center z-10">
+
+          {/* TEXT */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
               The Solution
             </h2>
-            <p className="text-gray-200 mb-8 leading-relaxed text-lg">
+
+            <p className="text-gray-200 mb-8 leading-relaxed text-lg text-justify">
               Lumixync developed an integrated web ecosystem that automated validation, rewards, and communications.
             </p>
 
             <div className="space-y-6">
               {deliverables.map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  className="backdrop-blur-md bg-white/10 border border-white/10 rounded-2xl p-5 shadow-lg hover:shadow-blue-500/20 transition"
-                >
-                  <h3 className="text-xl font-semibold mb-2 text-white">{item.title}</h3>
-                  <p className="text-gray-100 leading-relaxed">{item.desc}</p>
-                </motion.div>
+                <div key={i} className="bg-white/10 border border-white/10 rounded-2xl p-5">
+                  <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                  <p className="text-gray-100 text-justify">{item.desc}</p>
+                </div>
               ))}
             </div>
           </motion.div>
 
-          {/* Solution Images */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="relative w-full h-[500px] flex flex-col justify-between space-y-8"
-          >
-            {[1, 2].map((i) => (
-              <div key={i} className="p-[2px] rounded-2xl bg-gradient-to-r from-transparent via-white/50 to-white/80 shadow-2xl">
-                <div className="relative w-full h-52 rounded-2xl overflow-hidden">
-                  <Image
-                    src="/HPSolution.webp"
-                    alt={`HP Solution Preview ${i}`}
-                    fill
-                    quality={70}
-                    loading="lazy"
-                    className="object-cover rounded-2xl"
-                  />
-                </div>
-              </div>
-            ))}
-          </motion.div>
-        </div>
+          {/* IMAGES RIGHT */}
+          <div className="relative flex items-center justify-center w-full mt-10">
 
-        {/* CTA */}
-        <div className="relative mt-16 text-center">
-          <motion.a
-    href="#contact"
-    aria-label="Request a Quote"
-    className="inline-block border border-white text-white 
-               px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-semibold 
-               transition-all duration-300 ease-in-out
-               hover:bg-[#2563eb]/20 hover:border-[#3b82f6] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]
-               focus:outline-none focus:ring-2 focus:ring-[#3b82f6]/50"
-    whileHover={{ scale: 1.07 }}
-    whileTap={{ scale: 0.97 }}
-  >
-        Tell Us About Your Project
-        
-  </motion.a>
+            {/* ⭐ RIGHT SIDE GLOW */}
+            <div
+              className="absolute right-0 top-0 h-full 
+              w-[380px] sm:w-[500px] md:w-[650px] lg:w-[750px]
+              bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20 
+              blur-[120px] opacity-60 pointer-events-none"
+            />
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="relative w-full h-[500px] flex flex-col justify-between space-y-8"
+            >
+              {[1, 2].map((i) => (
+                <div key={i} className="bg-white/20 p-[2px] rounded-2xl">
+                  <div className="relative w-full h-52 rounded-2xl overflow-hidden">
+                    <Image
+                      src="/HPSolution.webp"
+                      alt={`HP Solution Preview ${i}`}
+                      fill
+                      className="object-cover rounded-2xl"
+                    />
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+
+          </div>
+
         </div>
       </section>
 
-      {/* Results Section */}
+      {/* ===================== RESULTS SECTION ===================== */}
       <section className="relative overflow-hidden py-24 px-6 text-center">
-        <div className="relative max-w-6xl mx-auto">
+
+        {/* ⭐ GLASS RIGHT-SIDE GLOW */}
+        <div
+          className="absolute right-0 top-0 h-full 
+          w-[380px] sm:w-[500px] md:w-[650px] lg:w-[750px]
+          bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20 
+          blur-[120px] opacity-60 pointer-events-none"
+        />
+
+        <div className="relative max-w-6xl mx-auto z-10">
+
           <motion.h2
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold mb-12  text-white bg-clip-text text-transparent"
+            className="text-4xl md:text-5xl font-bold mb-12"
           >
             The Results
           </motion.h2>
@@ -259,40 +266,15 @@ export function CaseStudy() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.2, duration: 0.7 }}
-                className="relative p-[2px] rounded-2xl shadow-2xl hover:shadow-blue-400/40 transition"
+                className="bg-white/10 backdrop-blur-md rounded-2xl p-8"
               >
-                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 h-full flex flex-col justify-center">
-                  <p className="text-5xl font-extrabold mb-3 drop-shadow-[0_0_10px_rgba(147,197,253,0.5)]">
-                    {r.stat}
-                  </p>
-                  <p className="text-gray-200 text-lg">{r.label}</p>
-                </div>
+                <p className="text-5xl font-extrabold mb-3">{r.stat}</p>
+                <p className="text-gray-200 text-lg">{r.label}</p>
               </motion.div>
             ))}
           </div>
+
         </div>
-      </section>
-
-      {/* Footer CTA */}
-      <section className="py-16 text-center">
-        <h3 className="text-2xl font-semibold mb-4">Want results like these?</h3>
-        <p className="mb-6 text-gray-200">
-          Let’s build a high-performing digital experience for your brand.
-        </p>
-
-        <motion.a
-            href="#contact"
-            aria-label="Request a Quote"
-            className="inline-block border border-white text-white 
-                       px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-semibold 
-                       transition-all duration-300 ease-in-out
-                       hover:bg-[#2563eb]/20 hover:border-[#3b82f6] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]
-                       focus:outline-none focus:ring-2 focus:ring-[#3b82f6]/50"
-            whileHover={{ scale: 1.07 }}
-            whileTap={{ scale: 0.97 }}
-          >
-           Let’s Talk
-         </motion.a>
       </section>
     </section>
   );

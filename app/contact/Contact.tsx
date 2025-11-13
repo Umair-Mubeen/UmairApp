@@ -14,33 +14,44 @@ export function Contact() {
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  ) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    //alert("Thank you! Your message has been sent.");
     setFormData({ name: "", company: "", email: "", phone: "", message: "" });
   };
 
   return (
     <section
       id="contact"
-      className="text-gray-300 flex flex-col items-center justify-center px-6 py-20"
+      className="relative text-white flex flex-col items-center justify-center px-6 py-24 overflow-hidden"
     >
+      {/* ⭐ RIGHT-SIDE FULL BACKGROUND GLOW (EXACT MATCH WITH TEAM SECTION) */}
+      <div
+        className="
+          absolute right-0 top-0 h-full
+          w-[380px] sm:w-[480px] md:w-[620px] lg:w-[750px]
+          bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20
+          blur-[120px] opacity-60 pointer-events-none
+        "
+      />
+
+      {/* Soft radial overlay */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.07),_transparent_70%)]" />
+
+      {/* Heading */}
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-4xl font-bold text-center mb-4"
+        className="relative text-4xl md:text-5xl font-bold text-center mb-4 z-10"
       >
         Take The Silk Road To <br />
-        <span className="text-white-600">Digitizing Your Business Growth</span>
+        <span className="text-blue-300">Digitizing Your Business Growth</span>
       </motion.h2>
 
-      <p className="text-lg text-center text-white-600 mb-12">
+      <p className="relative text-lg md:text-xl text-gray-300 text-center mb-14 z-10">
         Start A Conversation With Us
       </p>
 
@@ -50,89 +61,74 @@ export function Contact() {
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="w-full max-w-3xl bg-white rounded-2xl shadow-lg p-8 grid grid-cols-1 md:grid-cols-2 gap-6"
+        className="
+          relative z-10 w-full max-w-3xl 
+          bg-white/10 backdrop-blur-xl 
+          border border-white/10 rounded-2xl 
+          shadow-xl p-10 
+          grid grid-cols-1 md:grid-cols-2 gap-6
+        "
       >
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Name*
-          </label>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            placeholder="Your Name"
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
+        {/* Input Fields */}
+        {[
+          { label: "Name*", name: "name", type: "text", placeholder: "Your Name" },
+          { label: "Company Name*", name: "company", type: "text", placeholder: "Company Name" },
+          { label: "Email*", name: "email", type: "email", placeholder: "you@example.com" },
+          { label: "Phone*", name: "phone", type: "tel", placeholder: "+92 300 0000000" },
+        ].map((field, i) => (
+          <div key={i}>
+            <label className="block text-sm font-medium text-gray-200 mb-1">
+              {field.label}
+            </label>
+            <input
+              required
+              type={field.type}
+              name={field.name}
+              value={formData[field.name as keyof typeof formData]}
+              placeholder={field.placeholder}
+              onChange={handleChange}
+              className="
+                w-full bg-white/5 border border-white/20 rounded-lg px-4 py-3 
+                text-white focus:outline-none 
+                focus:ring-2 focus:ring-blue-500/60 focus:border-blue-400 
+                placeholder-gray-400
+              "
+            />
+          </div>
+        ))}
 
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Company Name*
-          </label>
-          <input
-            type="text"
-            name="company"
-            value={formData.company}
-            onChange={handleChange}
-            required
-            placeholder="Company Name"
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Email*
-          </label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            placeholder="you@example.com"
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Phone*
-          </label>
-          <input
-            type="tel"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-            placeholder="+92 300 0000000"
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-
+        {/* Message Field */}
         <div className="md:col-span-2">
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-gray-200 mb-1">
             Your Message*
           </label>
           <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
             required
             rows={4}
+            name="message"
             placeholder="Type your message here..."
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={formData.message}
+            onChange={handleChange}
+            className="
+              w-full bg-white/5 border border-white/20 rounded-lg px-4 py-3 
+              text-white focus:outline-none 
+              focus:ring-2 focus:ring-blue-500/60 focus:border-blue-400 
+              placeholder-gray-400
+            "
           ></textarea>
         </div>
 
-        <div className="md:col-span-2 flex justify-center">
+        {/* Submit Button */}
+        <div className="md:col-span-2 flex justify-center mt-4">
           <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.06 }}
+            whileTap={{ scale: 0.96 }}
             type="submit"
-            className="bg-blue-600 text-white font-semibold px-8 py-3 rounded-full shadow-md hover:bg-blue-700 transition"
+            className="
+              bg-blue-600/90 text-white font-semibold px-10 py-3 rounded-full shadow-lg 
+              hover:bg-blue-700 hover:shadow-[0_0_20px_rgba(59,130,246,0.45)] 
+              transition
+            "
           >
             Submit
           </motion.button>

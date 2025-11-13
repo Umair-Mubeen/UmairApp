@@ -38,8 +38,18 @@ export function WebExperienceSection() {
       className="relative min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-12 text-white overflow-hidden 
       scroll-smooth selection:bg-purple-600 selection:text-white"
     >
+
+      {/* ⭐ FULL RIGHT-SIDE BACKGROUND GLOW */}
+      <div
+        className="absolute right-0 top-0 h-full
+        w-[400px] sm:w-[500px] md:w-[650px] lg:w-[750px]
+        bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20
+        blur-[120px] opacity-70 pointer-events-none"
+        aria-hidden="true"
+      />
+
       {/* Left Text Section */}
-      <div className="flex-1 max-w-xl text-center md:text-left mb-12 md:mb-0">
+      <div className="relative z-10 flex-1 max-w-xl text-center md:text-left mb-12 md:mb-0">
         <p
           className="uppercase tracking-widest text-blue-300 font-semibold mb-3"
           aria-label="Expertise Heading"
@@ -61,24 +71,24 @@ export function WebExperienceSection() {
           stunning, fast, and built to convert visitors into loyal customers.
         </p>
 
-            <motion.a
-    href="#contact"
-    aria-label="View Services"
-    className="inline-block border border-white text-white 
+        <motion.a
+          href="#contact"
+          aria-label="View Services"
+          className="inline-block border border-white text-white 
                px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-semibold 
                transition-all duration-300 ease-in-out
                hover:bg-[#2563eb]/20 hover:border-[#3b82f6] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]
                focus:outline-none focus:ring-2 focus:ring-[#3b82f6]/50"
-    whileHover={{ scale: 1.07 }}
-    whileTap={{ scale: 0.97 }}
-  >
+          whileHover={{ scale: 1.07 }}
+          whileTap={{ scale: 0.97 }}
+        >
           Get a Free Consultation
-  </motion.a>
+        </motion.a>
       </div>
 
       {/* Right Auto-Sliding Carousel */}
       <div
-        className="flex-1 relative w-full max-w-md md:max-w-lg lg:max-w-2xl h-[50vh] md:h-[400px] lg:h-[500px] 
+        className="relative z-10 flex-1 w-full max-w-md md:max-w-lg lg:max-w-2xl h-[50vh] md:h-[400px] lg:h-[500px] 
         rounded-2xl overflow-hidden shadow-2xl border border-white/10"
         aria-label="Web Design Showcase Carousel"
       >
@@ -93,7 +103,7 @@ export function WebExperienceSection() {
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.9, ease: "easeInOut" }}
               >
-                {/* Optimized Image */}
+                {/* Image */}
                 <div className="relative w-full h-full">
                   <Image
                     src={slide.src}
@@ -101,16 +111,16 @@ export function WebExperienceSection() {
                     fill
                     sizes="(max-width: 640px) 90vw, (max-width: 1024px) 70vw, 600px"
                     quality={70}
-                    priority={i === 0} // First slide loads immediately for faster LCP
+                    priority={i === 0}
                     loading={i === 0 ? "eager" : "lazy"}
-                    className="object-cover object-center transition-transform duration-700"
+                    className="object-cover transition-transform duration-700"
                   />
                 </div>
 
-                {/* Overlay */}
+                {/* Dark Overlay for Readability */}
                 <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
 
-                {/* Text Overlay */}
+                {/* Caption */}
                 <figcaption
                   className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/70 to-transparent"
                   aria-live="polite"

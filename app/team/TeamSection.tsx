@@ -60,15 +60,22 @@ export function TeamSection() {
     <section
       id="team"
       aria-label="Meet Our Team"
-      className="py-16 text-white"
+      className="py-16 text-white relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      {/* ⭐ RIGHT SIDE FULL BACKGROUND GLOW */}
+      <div
+        className="absolute right-0 top-0 h-full
+        w-[380px] sm:w-[480px] md:w-[620px] lg:w-[750px]
+        bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20
+        blur-[120px] opacity-60 pointer-events-none"
+      />
+
+      <div className="relative max-w-7xl mx-auto px-6 z-10">
         {/* Header */}
         <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-3 pb-10">
           <Image
-             src="/WebLogo.png"
-           
-        alt="Lumixync Logo"
+            src="/WebLogo.png"
+            alt="Lumixync Logo"
             width={200}
             height={50}
             priority
@@ -81,7 +88,7 @@ export function TeamSection() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 relative z-10">
           {teamMembers.map((member, index) => (
             <div
               key={member.name}
@@ -95,19 +102,17 @@ export function TeamSection() {
                   fill
                   sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 300px"
                   quality={70}
-                  loading={index === 0 ? "eager" : "lazy"} // Prioritize first image
+                  loading={index === 0 ? "eager" : "lazy"}
                   className="object-cover rounded-xl transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
 
-              {/* Gradient overlay + Social icons */}
+              {/* Gradient Overlay & Social Icons */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl">
                 <div className="flex gap-4 mb-16">
                   {member.socials.facebook && (
                     <a
                       href={member.socials.facebook}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       className="text-white text-lg hover:text-blue-500 transition-colors"
                       aria-label={`${member.name} on Facebook`}
                     >
@@ -117,8 +122,6 @@ export function TeamSection() {
                   {member.socials.twitter && (
                     <a
                       href={member.socials.twitter}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       className="text-white text-lg hover:text-blue-400 transition-colors"
                       aria-label={`${member.name} on Twitter`}
                     >
@@ -128,8 +131,6 @@ export function TeamSection() {
                   {member.socials.linkedin && (
                     <a
                       href={member.socials.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       className="text-white text-lg hover:text-blue-600 transition-colors"
                       aria-label={`${member.name} on LinkedIn`}
                     >
@@ -139,8 +140,6 @@ export function TeamSection() {
                   {member.socials.instagram && (
                     <a
                       href={member.socials.instagram}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       className="text-white text-lg hover:text-pink-500 transition-colors"
                       aria-label={`${member.name} on Instagram`}
                     >
