@@ -12,12 +12,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// ✅ SEO + Social metadata
 export const metadata: Metadata = {
   title: "LUMIXYNC | Creative Web Design Agency",
   description:
     "LUMIXYNC builds high-performance, beautifully designed websites and digital experiences to help brands grow online.",
-  metadataBase: new URL("https://www.lumixync.com"), // ensures absolute URLs for images
+  metadataBase: new URL("https://www.lumixync.com"),
 
   openGraph: {
     title: "LUMIXYNC — Creative Web Design Agency",
@@ -47,11 +46,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-black">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-br from-indigo-950 via-purple-900 to-blue-900 text-white min-h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased text-white min-h-screen bg-black overflow-x-hidden overscroll-none`}
       >
-        {children}
+        <div className="bg-gradient-to-br from-indigo-950 via-purple-900 to-blue-900 min-h-screen w-full relative z-0">
+          {children}
+        </div>
       </body>
     </html>
   );

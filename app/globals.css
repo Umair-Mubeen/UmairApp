@@ -1,5 +1,27 @@
 @import "tailwindcss";
+
+/* Smooth scroll */
 html {
   scroll-behavior: smooth;
 }
 
+/* 🔥 iPhone Safari White-Flash Fix */
+html, body {
+  background: #000 !important;              /* Always keep a solid black base */
+  overscroll-behavior: none;                /* Disable white overscroll glow */
+  -webkit-overflow-scrolling: touch;        /* Smooth momentum scroll */
+  color-scheme: dark;                       /* Prevent light flash on form UI */
+}
+
+/* Force GPU layer so Safari doesn't repaint white */
+body {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  overflow-x: hidden;
+  min-height: 100%;
+}
+
+/* Prevent transparent elements exposing the white root layer */
+* {
+  background-color: transparent;
+}
