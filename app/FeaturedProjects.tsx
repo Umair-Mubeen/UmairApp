@@ -69,7 +69,7 @@ export function FeaturedProjects() {
         {[
           { src: "/FeatureProjects/B2B.png", alt: "B2B Website Project" },
           { src: "/FeatureProjects/B2C.png", alt: "B2C Website Project" },
-          { src: "/FeatureProjects/ECommerce.png", alt: "Ecommerce Website Project" },
+          { src: "/FeatureProjects/Ecommerce.png", alt: "Ecommerce Website Project" },
         ].map((project, index) => (
           <motion.figure
             key={index}
