@@ -26,6 +26,10 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <Hero />; // render client-side component
+
+  return (
+  
+  <Hero />
+  ); // render client-side component
 }
 

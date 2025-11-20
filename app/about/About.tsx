@@ -10,17 +10,17 @@ export function About() {
     {
       title: "Creative Strategy",
       desc: `We craft insight-driven strategies that connect storytelling, design, and performance — turning ideas into brand growth.Our approach blends deep market understanding with creative thinking, ensuring your brand communicates with clarity, emotion, and purpose.From positioning to content direction, every strategy is built to engage audiences and drive measurable results.`,
-      img: "/About/CStrategy.png",
+      img: "/StockImages/CStrategy.png",
     },
     {
       title: "Innovative Design",
       desc: `Our design philosophy is built on clarity, emotion, and conversion.We craft visuals that not only look beautiful but serve a strategic purpose — guiding users, elevating your brand, and creating memorable experiences.Every pixel, color, and interaction is intentional.From high-end UI layouts to immersive brand identities, our designs merge aesthetics with performance to help your brand stand out in crowded digital spaces.`,
-      img: "/About/Innovative.png",
+      img: "/StockImages/Innovative.png",
     },
     {
       title: "Modern Tech Stack",
       desc: `We use a powerful, modern technology stack to build fast, scalable, and future-proof digital experiences.From React, Next.js, and TailwindCSS to AWS, databases, automations, and API integrations — everything is engineered for performance and reliability.Whether you're launching a website, dashboard, or custom web application, our tech ensures lightning-fast loading, smooth interactions, and long-term stability.`,
-      img: "/About/Technology.png",
+      img: "/StockImages/Technology.png",
     },
   ];
 

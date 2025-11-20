@@ -67,6 +67,7 @@ export function Navbar() {
   ];
 
   return (
+    
     <header
       className="fixed top-0 left-0 w-full z-50 bg-gradient-to-br from-[#000000] via-[#0a0a0a] to-[#1a1a1a] backdrop-blur-sm"
     >

@@ -24,24 +24,7 @@ export function WebSection() {
         blur-[120px] opacity-70 pointer-events-none"
       />
 
-      {/* Floating Tech Strip */}
-      <div className="absolute top-4 left-0 w-full flex justify-center lg:justify-start gap-3 sm:gap-5 z-10 px-4 sm:px-6 lg:px-16">
-        <div
-          className="flex items-center gap-3 sm:gap-5 overflow-x-auto py-2 lg:py-0 no-scrollbar"
-          aria-label="Technologies Used"
-        >
-          {["WordPress", "Shopify", "Next.js", "React", "Framer"].map((name) => (
-            <div
-              key={name}
-              className="flex-shrink-0 opacity-80 bg-white/10 px-3 sm:px-4 py-2 rounded-md text-xs sm:text-sm md:text-base 
-              backdrop-blur-md hover:opacity-100 transition-opacity duration-300"
-            >
-              {name}
-            </div>
-          ))}
-        </div>
-      </div>
-
+ 
       {/* Main Layout */}
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-[1fr_0.9fr] gap-8 lg:gap-20 items-center z-10 py-24 sm:py-28 lg:py-36">
         
@@ -120,7 +103,7 @@ export function WebSection() {
               max-w-full z-10 transition-all duration-700"
           >
             <Image
-              src="/B.png"
+              src="/StockImages/GrowBrands.png"
               alt="We Grow Brands Online"
               fill
               sizes="(max-width: 640px) 90vw, (max-width: 1024px) 70vw, 550px"

@@ -36,12 +36,9 @@ export default function Hero() {
   }, []);
 
   return (
-    <main
-      className={`min-h-screen w-full overflow-x-hidden text-white transition-all duration-700 ${themes[themeIndex]}`}
-    >
-      {/* Navbar stays persistent */}
+  
+    <main className={`min-h-screen w-full overflow-x-hidden text-white transition-all duration-700 ${themes[themeIndex]}`}>
       <Navbar />
-
       {/* Sections — each wrapped in a border divider */}
       <Section>
         <WebSection />
@@ -83,6 +80,7 @@ export default function Hero() {
         <Fview />
       </Section>
     </main>
+   
   );
 }
 
