@@ -4,8 +4,7 @@ import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
 import { Navbar } from "./Navbar";
 
-
-// ✅ Dynamically import non-critical sections for faster initial load
+// Lazy load sections
 const WebSection = dynamic(() => import("./WebSection").then(mod => mod.WebSection), { ssr: false });
 const AgencySection = dynamic(() => import("./AgencySection").then(mod => mod.AgencySection), { ssr: false });
 const FeaturedProjects = dynamic(() => import("./FeaturedProjects").then(mod => mod.FeaturedProjects), { ssr: false });
@@ -18,16 +17,12 @@ const TeamSection = dynamic(() => import("./team/TeamSection").then(mod => mod.T
 const Fview = dynamic(() => import("./Fview").then(mod => mod.Fview), { ssr: false });
 
 export default function Hero() {
-  // 🔹 Optional: theme switcher for background gradient transitions
   const themes = [
-    //"bg-gradient-to-br from-indigo-950 via-purple-900 to-blue-900",
-    //"bg-gradient-to-br from-[#0f172a] via-[#1e1b4b] to-[#312e81]"
     "bg-gradient-to-br from-[#000000] via-[#0a0a0a] to-[#1a1a1a]"
-
   ];
+
   const [themeIndex, setThemeIndex] = useState(0);
 
-  // Smooth background change every 45 seconds (optional aesthetic)
   useEffect(() => {
     const interval = setInterval(() => {
       setThemeIndex((prev) => (prev + 1) % themes.length);
@@ -36,63 +31,62 @@ export default function Hero() {
   }, []);
 
   return (
-  
-    <main className={`min-h-screen w-full overflow-x-hidden text-white transition-all duration-700 ${themes[themeIndex]}`}>
+    <>
+      {/* ✅ Navbar OUTSIDE main so sticky works on every OS */}
+     
       <Navbar />
-      {/* Sections — each wrapped in a border divider */}
-      <Section>
-        <WebSection />
-      </Section>
 
-      <Section>
-        <AgencySection />
-      </Section>
+      <main
+        className={`min-h-screen w-full overflow-x-hidden text-white transition-all duration-700 pt-20 ${themes[themeIndex]}`}
+      >
+        <Section>
+          <WebSection />
+        </Section>
 
-      <Section>
-        <FeaturedProjects />
-      </Section>
+        <Section>
+          <AgencySection />
+        </Section>
 
-      <Section>
-        <WebExperienceSection />
-      </Section>
+        <Section>
+          <FeaturedProjects />
+        </Section>
 
-      <Section>
-        <About />
-      </Section>
+        <Section>
+          <WebExperienceSection />
+        </Section>
 
-      <Section>
-        <Services />
-      </Section>
+        <Section>
+          <About />
+        </Section>
 
-      <Section>
-        <CaseStudy />
-      </Section>
+        <Section>
+          <Services />
+        </Section>
 
-      <Section>
-        <Contact />
-      </Section>
+        <Section>
+          <CaseStudy />
+        </Section>
 
-      <Section>
-        <TeamSection />
-      </Section>
+        <Section>
+          <Contact />
+        </Section>
 
-      <Section>
-        <Fview />
-      </Section>
-    </main>
-   
+        <Section>
+          <TeamSection />
+        </Section>
+
+        <Section>
+          <Fview />
+        </Section>
+      </main>
+    </>
   );
 }
 
 function Section({ children }: { children: React.ReactNode }) {
   return (
     <section className="relative">
-
-      {/* Gradient Border Line */}
-      <div className="absolute inset-x-0 top-0 h-[1px] 
-                      bg-gradient-to-r 
-                      from-indigo-700/40 via-purple-600/40 to-blue-500/40" />
-
+      <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-indigo-700/40 via-purple-600/40 to-blue-500/40" />
       {children}
     </section>
   );

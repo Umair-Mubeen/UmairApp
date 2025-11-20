@@ -48,9 +48,18 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-black">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased text-white min-h-screen bg-black overflow-x-hidden overscroll-none`}
+        className={`
+          ${geistSans.variable} 
+          ${geistMono.variable} 
+          antialiased 
+          text-white 
+          min-h-screen 
+          bg-black 
+          overflow-x-hidden
+        `}
       >
-        <div className="bg-gradient-to-br from-indigo-950 via-purple-900 to-blue-900 min-h-screen w-full relative z-0">
+        {/* ✅ Removed relative & overscroll-none so fixed navbar works */}
+        <div className="bg-gradient-to-br from-indigo-950 via-purple-900 to-blue-900 min-h-screen w-full z-0">
           {children}
         </div>
       </body>

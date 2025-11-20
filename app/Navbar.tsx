@@ -5,6 +5,16 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 export function Navbar() {
+  const [isSticky, setIsSticky] = useState(false);
+  useEffect(() => {
+  const handleScroll = () => {
+    setIsSticky(window.scrollY > 80); // becomes fixed after 80px scroll
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
   const mobileMenuRef = useRef<HTMLUListElement | null>(null);
