@@ -86,7 +86,7 @@ export function About() {
               {/* Image */}
               <motion.div
                 style={{ y: y1 }}
-                className="relative rounded-2xl overflow-hidden shadow-2xl 
+                className="relative rounded-2xl overflow-hidden 
                 w-[80vw] sm:w-[60vw] md:w-[50vw] lg:w-[460px] xl:w-[500px] 
                 aspect-[4/3] max-w-full z-10"
               >

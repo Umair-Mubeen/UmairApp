@@ -98,7 +98,7 @@ export function CaseStudy() {
       transition={{ duration: 0.9 }}
     >
       {/* MAIN IMAGE */}
-      <div className="relative w-full max-w-md aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+      <div className="relative w-full max-w-md aspect-[4/3] rounded-2xl overflow-hidden">
         <Image
           src="/HP.webp"
           alt="HP Customer Loyalty Portal"
@@ -108,7 +108,7 @@ export function CaseStudy() {
       </div>
 
       {/* TOP RIGHT SMALL IMAGE (floating) */}
-      <div className="relative w-36 sm:w-44 md:w-48 aspect-square rounded-2xl overflow-hidden shadow-xl -mt-14 md:-mt-20">
+      <div className="relative w-36 sm:w-44 md:w-48 aspect-square rounded-2xl overflow-hidden -mt-14 md:-mt-20">
         <Image
           src="/WebProject.webp"
           alt="HP Project Snapshot"

@@ -89,7 +89,6 @@ export function Services() {
                 whileHover={{ scale: 1.06, y: -6 }}
                 transition={{ type: "spring", stiffness: 220, damping: 15 }}
                 className="group relative p-10 bg-white/10 rounded-2xl shadow-lg backdrop-blur-xl
-                
                 transition-all duration-500 flex flex-col justify-center items-center text-center h-72"
                 aria-label={service.title}
               >

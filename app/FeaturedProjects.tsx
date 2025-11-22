@@ -75,7 +75,7 @@ export function FeaturedProjects() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.2 }}
-            className="relative w-[260px] sm:w-[300px] md:w-[340px] rounded-2xl overflow-hidden shadow-xl 
+            className="relative w-[260px] sm:w-[300px] md:w-[340px]
             hover:shadow-2xl group transition-transform duration-500 transform hover:-translate-y-2"
           >
             <div className="relative w-full h-[260px] sm:h-[300px] md:h-[340px]">
