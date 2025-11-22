@@ -102,13 +102,13 @@ export function WebSection() {
               max-w-full z-10 transition-all duration-700"
           >
             <Image
-              src="/StockImages/GrowBrands.png"
+              src="/StockImages/BrandsOnline.png"
               alt="We Grow Brands Online"
               fill
               sizes="(max-width: 640px) 90vw, (max-width: 1024px) 70vw, 550px"
               quality={70}
               loading="lazy"
-              className="object-cover md:object-contain xl:object-cover transition-transform duration-700 group-hover:scale-105"
+              className="object-contain object-center transition-transform duration-700 group-hover:scale-105"
             />
           </motion.div>
 

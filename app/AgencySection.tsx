@@ -118,7 +118,7 @@ export function AgencySection() {
               max-w-full z-10 transition-all duration-700"
           >
             <Image
-              src="/StockImages/image.png"
+              src="/StockImages/CSL.png"
               alt="Creative Web Agency delivering custom digital solutions"
               fill
               quality={70}
