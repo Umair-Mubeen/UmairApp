@@ -112,7 +112,7 @@ export function AgencySection() {
             initial={{ opacity: 0, scale: 0.9, y: 40 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="relative group ovƒerflow-hidden rounded-2xl shadow-2xl border border-0 
+            className="relative group ovƒerflow-hidden rounded-2xl shadow-2xl 
               w-[85vw] sm:w-[70vw] md:w-[60vw] lg:w-[550px] xl:w-[600px]
               aspect-[4/3] md:aspect-[5/4] lg:aspect-[16/10]
               max-w-full z-10 transition-all duration-700"

@@ -88,12 +88,12 @@ export function Services() {
               <motion.article
                 whileHover={{ scale: 1.06, y: -6 }}
                 transition={{ type: "spring", stiffness: 220, damping: 15 }}
-                className="group relative p-10 bg-white/10 border border-white/20 rounded-2xl shadow-lg backdrop-blur-xl
-                hover:border-blue-400/60 hover:shadow-[0_0_45px_rgba(59,130,246,0.35)] hover:bg-white/15
+                className="group relative p-10 bg-white/10 rounded-2xl shadow-lg backdrop-blur-xl
+                
                 transition-all duration-500 flex flex-col justify-center items-center text-center h-72"
                 aria-label={service.title}
               >
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white group-hover:text-blue-300 transition-colors duration-300">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white  transition-colors duration-300">
                   {service.title}
                 </h2>
                 <p className="text-gray-300 leading-relaxed text-sm md:text-base max-w-xs">

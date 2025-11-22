@@ -63,7 +63,7 @@ export function Contact() {
         className="
           relative z-10 w-full max-w-3xl 
           bg-white/10 backdrop-blur-xl 
-          border border-white/10 rounded-2xl 
+          rounded-2xl 
           shadow-xl p-10 
           grid grid-cols-1 md:grid-cols-2 gap-6
         "

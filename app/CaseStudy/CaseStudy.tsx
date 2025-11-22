@@ -147,7 +147,7 @@ export function CaseStudy() {
               HP needed a scalable rewards platform that could handle multiple regions, languages, and retailer integrations.
             </p>
 
-            <div className="bg-white/10 rounded-2xl p-6 space-y-4 border border-white/10">
+            <div className="bg-white/10 rounded-2xl p-6 space-y-4">
               {[
                 "Complex brand architecture across regions",
                 "High implementation costs",
@@ -208,7 +208,7 @@ export function CaseStudy() {
 
             <div className="space-y-6">
               {deliverables.map((item, i) => (
-                <div key={i} className="bg-white/10 border border-white/10 rounded-2xl p-5">
+                <div key={i} className="bg-white/10 rounded-2xl p-5">
                   <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                   <p className="text-gray-100 text-justify">{item.desc}</p>
                 </div>

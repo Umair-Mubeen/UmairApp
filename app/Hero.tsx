@@ -32,13 +32,14 @@ export default function Hero() {
 
   return (
     <>
-      {/* ✅ Navbar OUTSIDE main so sticky works on every OS */}
-     
+      <main
+        className={`min-h-screen w-full overflow-x-hidden text-white transition-all duration-700  ${themes[themeIndex]}`}
+      >
+        <Section>
+
       <Navbar />
 
-      <main
-        className={`min-h-screen w-full overflow-x-hidden text-white transition-all duration-700 pt-20 ${themes[themeIndex]}`}
-      >
+</Section>
         <Section>
           <WebSection />
         </Section>

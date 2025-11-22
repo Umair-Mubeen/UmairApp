@@ -6,15 +6,6 @@ import { motion } from "framer-motion";
 
 export function Navbar() {
   const [isSticky, setIsSticky] = useState(false);
-  useEffect(() => {
-  const handleScroll = () => {
-    setIsSticky(window.scrollY > 80); // becomes fixed after 80px scroll
-  };
-
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
-
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
   const mobileMenuRef = useRef<HTMLUListElement | null>(null);
@@ -78,13 +69,12 @@ export function Navbar() {
 
   return (
     
-    <header
-      className="fixed top-0 left-0 w-full z-50 bg-gradient-to-br from-[#000000] via-[#0a0a0a] to-[#1a1a1a] backdrop-blur-sm"
-    >
-      <nav
-        className="w-full flex items-center justify-between px-4 sm:px-6 md:px-8 py-3 md:py-4 border-b border-white/10"
-        aria-label="Main navigation"
-      >
+   <header className="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+
+  <nav
+    className="w-full flex items-center justify-between px-4 sm:px-6 md:px-8 py-3 md:py-4 border border-[rgba(168,85,255,0.25)]"
+    aria-label="Main navigation"
+  >
         {/* Logo */}
         <motion.div whileHover={{ rotate: -5, scale: 1.04 }}>
           <Link href="/" aria-label="Homepage">

@@ -35,7 +35,7 @@ export function About() {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-5xl md:text-6xl font-extrabold mb-4"
+          className="text-5xlƒ md:text-6xl font-extrabold mb-4"
         >
           About
         </motion.h1>
@@ -86,7 +86,7 @@ export function About() {
               {/* Image */}
               <motion.div
                 style={{ y: y1 }}
-                className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 
+                className="relative rounded-2xl overflow-hidden shadow-2xl 
                 w-[80vw] sm:w-[60vw] md:w-[50vw] lg:w-[460px] xl:w-[500px] 
                 aspect-[4/3] max-w-full z-10"
               >
