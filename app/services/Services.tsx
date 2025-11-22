@@ -36,7 +36,7 @@ export function Services() {
 
       {/* Light radial overlay */}
       <div
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.07),_transparent_70%)] z-0"
+        className="absolute"
         aria-hidden="true"
       />
 

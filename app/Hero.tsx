@@ -18,8 +18,11 @@ const Fview = dynamic(() => import("./Fview").then(mod => mod.Fview), { ssr: fal
 
 export default function Hero() {
   const themes = [
-    "bg-gradient-to-br from-[#000000] via-[#0a0a0a] to-[#1a1a1a]"
+    //"bg-gradient-to-br from-[#000000] via-[#0a0a0a] to-[#1a1a1a]"
     //"bg-gradient-to-br from-[#1a1b20] via-[#1f2026] to-[#212229]"
+    //"bg-gradient-to-br from-[#05050A] via-[#0A0F1A] to-[#0F0A1A]"
+    "bg-gradient-to-br from-[#06060F] via-[#0B0A20] to-[#120A2A]"
+    //"bg-gradient-to-br from-[#04040A] via-[#0A0D1A] to-[#111122]"
   ];
 
   const [themeIndex, setThemeIndex] = useState(0);
