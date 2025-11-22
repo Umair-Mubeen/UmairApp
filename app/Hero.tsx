@@ -86,7 +86,7 @@ export default function Hero() {
 function Section({ children }: { children: React.ReactNode }) {
   return (
     <section className="relative">
-      <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-indigo-700/40 via-purple-600/40 to-blue-500/40" />
+      <div className="absolute inset-x-0 top-0 h-[1px] border border-[rgba(168,85,255,0.25)]" />
       {children}
     </section>
   );

@@ -43,7 +43,6 @@ export function WebExperienceSection() {
       <div
         className="absolute right-0 top-0 h-full
         w-[400px] sm:w-[500px] md:w-[650px] lg:w-[750px]
-        bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20
         blur-[120px] opacity-70 pointer-events-none"
         aria-hidden="true"
       />

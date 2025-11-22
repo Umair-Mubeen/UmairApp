@@ -30,7 +30,6 @@ export function Services() {
       {/* 🌟 RIGHT-SIDE GRADIENT GLOW (Same style as your other sections) */}
       <div
         className="absolute -right-32 top-40 w-[480px] h-[480px]
-        bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20
         blur-3xl rounded-full pointer-events-none"
         aria-hidden="true"
       />

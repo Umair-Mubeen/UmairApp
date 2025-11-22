@@ -20,8 +20,7 @@ export function WebSection() {
         aria-hidden="true"
         className="absolute right-0 top-0 h-full
         w-[380px] sm:w-[480px] md:w-[620px] lg:w-[700px]
-        bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20
-        blur-[120px] opacity-70 pointer-events-none"
+        opacity-70 pointer-events-none"
       />
 
  

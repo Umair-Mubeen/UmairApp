@@ -41,7 +41,6 @@ export function CaseStudy() {
   <div
     className="absolute right-0 top-0 h-full 
     w-[420px] sm:w-[550px] md:w-[700px] lg:w-[880px]
-    bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20 
     blur-[130px] opacity-60 pointer-events-none"
   />
 
@@ -129,7 +128,6 @@ export function CaseStudy() {
         <div
           className="absolute right-0 top-0 h-full 
           w-[380px] sm:w-[500px] md:w-[650px] lg:w-[750px]
-          bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20 
           blur-[120px] opacity-60 pointer-events-none"
         />
 
@@ -189,7 +187,6 @@ export function CaseStudy() {
         <div
           className="absolute right-0 top-0 h-full 
           w-[380px] sm:w-[500px] md:w-[650px] lg:w-[750px]
-          bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20 
           blur-[120px] opacity-60 pointer-events-none"
         />
 
@@ -226,7 +223,6 @@ export function CaseStudy() {
             <div
               className="absolute right-0 top-0 h-full 
               w-[380px] sm:w-[500px] md:w-[650px] lg:w-[750px]
-              bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20 
               blur-[120px] opacity-60 pointer-events-none"
             />
 
@@ -262,7 +258,6 @@ export function CaseStudy() {
         <div
           className="absolute right-0 top-0 h-full 
           w-[380px] sm:w-[500px] md:w-[650px] lg:w-[750px]
-          bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20 
           blur-[120px] opacity-60 pointer-events-none"
         />
 

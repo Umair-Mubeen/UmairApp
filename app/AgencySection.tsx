@@ -21,7 +21,6 @@ export function AgencySection() {
         aria-hidden="true"
         className="absolute right-0 top-0 h-full
         w-[380px] sm:w-[480px] md:w-[620px] lg:w-[700px]
-        bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20
         blur-[120px] opacity-70 pointer-events-none"
       />
 
@@ -113,19 +112,19 @@ export function AgencySection() {
             initial={{ opacity: 0, scale: 0.9, y: 40 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="relative group overflow-hidden rounded-2xl shadow-2xl border border-white/10 
+            className="relative group ovƒerflow-hidden rounded-2xl shadow-2xl border border-0 
               w-[85vw] sm:w-[70vw] md:w-[60vw] lg:w-[550px] xl:w-[600px]
               aspect-[4/3] md:aspect-[5/4] lg:aspect-[16/10]
               max-w-full z-10 transition-all duration-700"
           >
             <Image
-              src="/StockImages/CSolution.png"
+              src="/StockImages/image.png"
               alt="Creative Web Agency delivering custom digital solutions"
               fill
               quality={70}
               sizes="(max-width: 640px) 90vw, (max-width: 1024px) 70vw, 550px"
               loading="lazy"
-              className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+              className="object-contain object-center transition-transform duration-700 group-hover:scale-105"
             />
           </motion.div>
 
@@ -136,7 +135,7 @@ export function AgencySection() {
             className="absolute -bottom-6 sm:-bottom-8 right-4 sm:right-8 
               w-24 sm:w-36 md:w-44 lg:w-56 
               h-24 sm:h-36 md:h-44 lg:h-56 
-              bg-blue-500/20 blur-3xl rounded-full animate-pulse"
+              bg-blue-500/20 blur-3xl rounded-full animate-pu lse"
           />
         </div>
       </div>

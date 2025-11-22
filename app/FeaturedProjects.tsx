@@ -18,7 +18,6 @@ export function FeaturedProjects() {
         style={{ y: y2 }}
         className="absolute right-0 top-0 h-full 
         w-[400px] sm:w-[500px] md:w-[650px] lg:w-[750px]
-        bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20
         blur-[120px] opacity-70 pointer-events-none"
       />
 
@@ -50,7 +49,7 @@ export function FeaturedProjects() {
               className={`px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg border text-sm sm:text-base font-medium tracking-wide transition-all 
                 ${
                   index === 0
-                    ? "bg-white text-black font-bold shadow-md hover:shadow-lg"
+                    ? "border-blue-400 text-blue-300 hover:bg-blue-500 hover:text-white hover:border-blue-500"
                     : "border-blue-400 text-blue-300 hover:bg-blue-500 hover:text-white hover:border-blue-500"
                 }`}
               aria-pressed={index === 0}

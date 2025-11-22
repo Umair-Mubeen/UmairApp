@@ -80,7 +80,6 @@ export function About() {
                 className="absolute right-0 top-1/2 -translate-y-1/2
                 w-[280px] sm:w-[350px] md:w-[420px] lg:w-[480px]
                 h-[280px] sm:h-[350px] md:h-[420px] lg:h-[480px]
-                bg-gradient-to-tr from-indigo-700/40 via-purple-600/30 to-blue-500/20
                 blur-3xl rounded-full"
               />
 
