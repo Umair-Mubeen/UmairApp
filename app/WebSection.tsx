@@ -39,20 +39,19 @@ export function WebSection() {
           </motion.p>
 
           <motion.h1
-            className="font-extrabold text-2xl sm:text-3xl md:text-2xl lg:text-6xl leading-[1.15] mb-4 sm:mb-6 break-words"
+            className="font-extrabold text-2xl sm:text-3xl md:text-2xl lg:text-4xl leading-[1.15] mb-4 sm:mb-6 break-words"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            We Grow Brands <br className="hidden sm:block" /> Online
+            We Grow Brands Online
           </motion.h1>
 
           <motion.p
             className="text-gray-300 mb-8 text-base sm:text-lg md:text-xl leading-relaxed px-2 sm:px-0 max-w-lg mx-auto lg:mx-0"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-          >
+            transition={{ delay: 0.3, duration: 0.6 }}>
             Custom Websites, Branding & Digital Marketing that amplify your digital presence.
           </motion.p>
 
@@ -97,12 +96,13 @@ export function WebSection() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1 }}
             className="relative group overflow-hidden
-              w-[85vw] sm:w-[70vw] md:w-[60vw] lg:w-[550px] xl:w-[600px]
-              aspect-[4/3] md:aspect-[5/4] lg:aspect-[16/10]
-              max-w-full z-10 transition-all duration-700"
-          >
+  w-[500vw] sm:w-[70vw] md:w-[60vw] lg:w-[1200px] xl:w-[900px]
+  aspect-[4/3] md:aspect-[5/4] lg:aspect-[16/10]
+  max-w-full z-10 transition-all duration-700"
+
+       >
             <Image
-              src="/StockImages/BrandsOnline.png"
+              src="/image.png"
               alt="We Grow Brands Online"
               fill
               sizes="(max-width: 640px) 90vw, (max-width: 1024px) 70vw, 550px"

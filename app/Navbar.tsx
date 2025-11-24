@@ -69,10 +69,10 @@ export function Navbar() {
 
   return (
     
-   <header className="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+   <header className="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-gradient-to-br from-[#000000] via-[#0a0a0a] to-[#1a1a1a]">
 
   <nav
-    className="w-full flex items-center justify-between px-4 sm:px-6 md:px-8 py-3 md:py-4 border border-[rgba(168,85,255,0.25)]"
+    className="w-full flex items-center justify-between px-4 sm:px-6 md:px-8 py-3 md:py-4"
     aria-label="Main navigation"
   >
         {/* Logo */}

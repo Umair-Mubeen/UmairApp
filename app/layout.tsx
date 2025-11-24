@@ -59,7 +59,7 @@ export default function RootLayout({
         `}
       >
         {/* ✅ Removed relative & overscroll-none so fixed navbar works */}
-        <div className=" min-h-screen w-full z-0">
+        <div className="min-h-screen w-full z-0">
           {children}
         </div>
       </body>

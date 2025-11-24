@@ -37,7 +37,7 @@ export function Contact() {
       />
 
       {/* Soft radial overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.07),_transparent_70%)]" />
+      <div className="absolute inset-0" />
 
       {/* Heading */}
       <motion.h2
@@ -65,7 +65,7 @@ export function Contact() {
           bg-white/10 backdrop-blur-xl 
           rounded-2xl 
           shadow-xl p-10 
-          grid grid-cols-1 md:grid-cols-2 gap-6
+          grid grid-cols-1 md:grid-cols-2 gap-6 border border-white
         "
       >
         {/* Input Fields */}
@@ -73,7 +73,7 @@ export function Contact() {
           { label: "Name*", name: "name", type: "text", placeholder: "Your Name" },
           { label: "Company Name*", name: "company", type: "text", placeholder: "Company Name" },
           { label: "Email*", name: "email", type: "email", placeholder: "you@example.com" },
-          { label: "Phone*", name: "phone", type: "tel", placeholder: "+92 300 0000000" },
+          { label: "Phone*", name: "phone", type: "tel", placeholder: "+" },
         ].map((field, i) => (
           <div key={i}>
             <label className="block text-sm font-medium text-gray-200 mb-1">
@@ -124,7 +124,7 @@ export function Contact() {
             whileTap={{ scale: 0.96 }}
             type="submit"
             className="
-              bg-blue-600/90 text-white font-semibold px-10 py-3 rounded-full shadow-lg 
+              bg-white-600/90 text-white font-semibold px-10 py-3 rounded-full shadow-lg 
               hover:bg-blue-700 hover:shadow-[0_0_20px_rgba(59,130,246,0.45)] 
               transition
             "

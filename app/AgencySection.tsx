@@ -30,12 +30,12 @@ export function AgencySection() {
         {/* Left Column - Text */}
         <div className="relative z-10 text-center lg:text-left max-w-2xl mx-auto lg:mx-0 px-2 sm:px-4 md:px-8">
           <motion.h2
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-extrabold leading-tight mb-4 sm:mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-2xl font-extrabold leading-tight mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            Creative Web Agency <br className="hidden sm:block" /> Delivering Custom Solutions
+            Creative Web Agency Delivering Custom Solutions
           </motion.h2>
 
           <motion.p
@@ -113,12 +113,12 @@ export function AgencySection() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1 }}
             className="relative group ovƒerflow-hidden 
-              w-[85vw] sm:w-[70vw] md:w-[60vw] lg:w-[550px] xl:w-[600px]
+              w-[85vw] sm:w-[70vw] md:w-[60vw] lg:w-[750px] xl:w-[900px]
               aspect-[4/3] md:aspect-[5/4] lg:aspect-[16/10]
               max-w-full z-10 transition-all duration-700"
           >
             <Image
-              src="/StockImages/CSL.png"
+              src="/WebAgency.png"
               alt="Creative Web Agency delivering custom digital solutions"
               fill
               quality={70}

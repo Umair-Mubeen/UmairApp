@@ -66,9 +66,9 @@ export function FeaturedProjects() {
         aria-label="Featured Project Thumbnails"
       >
         {[
-          { src: "/StockImages/B.png", alt: "B2B Website Project" },
-          { src: "/StockImages/B2C.png", alt: "B2C Website Project" },
-          { src: "/StockImages/Ecommerce.png", alt: "Ecommerce Website Project" },
+          { src: "/B2B.png", alt: "B2B Website Project" },
+          { src: "/BC.png", alt: "B2C Website Project" },
+          { src: "/Ecommerce.png", alt: "Ecommerce Website Project" },
         ].map((project, index) => (
           <motion.figure
             key={index}
