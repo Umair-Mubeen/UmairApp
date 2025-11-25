@@ -69,17 +69,14 @@ export function Navbar() {
   ];
 
   return (
-    <header
-      className="
-        fixed top-0 left-0 w-full 
-        z-[999999]
-        bg-[#0b0b0b]
-        border-b border-white/10
-        shadow-[0_2px_20px_rgba(0,0,0,0.7)]
-        transition-all duration-300
-      "
-    >
-      <nav className="w-full flex items-center justify-between px-4 sm:px-6 md:px-8 py-3 md:py-4">
+   <header
+  className="
+    fixed top-0 left-0 w-full 
+    z-[999999]  
+    transition-all duration-300
+    bg-[#0b0b0b]"
+>
+     <nav className="w-full flex items-center justify-between px-4 sm:px-6 md:px-8 py-3 md:py-4">
         
         {/* Logo */}
         <motion.div whileHover={{ rotate: -5, scale: 1.04 }}>
@@ -111,36 +108,32 @@ export function Navbar() {
             </motion.li>
           ))}
 
-          {/* CTA */}
+          {/* CTA Button */}
           <motion.a
             href="#contact"
             whileHover={{ scale: 1.07 }}
-            className="border border-white text-white px-6 sm:px-8 py-2.5 rounded-xl font-semibold 
-                       transition-all hover:bg-[#2563eb]/20 hover:border-[#3b82f6]"
+            className="border border-white text-white px-6 sm:px-8 py-2.5 rounded-xl font-semibold transition-all hover:bg-[#2563eb]/20 hover:border-[#3b82f6]"
           >
             Request a Quote
           </motion.a>
         </ul>
 
-        {/* Mobile Toggle */}
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setMenuOpen((s) => !s)}
-          className="md:hidden p-2 rounded-md text-white"
+          className="md:hidden p-2 rounded-md text-white hover:text-blue-200"
         >
           {menuOpen ? "✕" : "☰"}
         </button>
 
-        {/* Mobile Menu */}
+        {/* Mobile Dropdown */}
         {menuOpen && (
           <motion.ul
             ref={mobileMenuRef}
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.28 }}
-            className="absolute top-full left-0 w-full 
-                       bg-gradient-to-br from-[#000000] via-[#0a0a0a] to-[#1a1a1a]
-                       flex flex-col items-center gap-4 py-6 text-white 
-                       font-medium md:hidden border-t border-white/5 shadow-lg"
+            className="absolute top-full left-0 w-full bg-gradient-to-br from-[#000000] via-[#0a0a0a] to-[#1a1a1a] flex flex-col items-center gap-4 py-6 text-white font-medium md:hidden border-t border-white/5 shadow-lg"
           >
             {navItems.map((item) => (
               <li key={item.id}>
