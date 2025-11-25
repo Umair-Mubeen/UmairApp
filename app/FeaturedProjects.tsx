@@ -4,24 +4,24 @@ import Image from "next/image";
 
 export function FeaturedProjects() {
   const { scrollY } = useScroll();
-  const y2 = useTransform(scrollY, [0, 500], [0, -80]); // RIGHT glow parallax
+  const y2 = useTransform(scrollY, [0, 500], [0, -80]);
 
   return (
     <section
       id="featured-projects"
       aria-label="Featured Website Design Projects"
-      className="relative min-h-screen text-white flex flex-col items-center justify-center px-6 py-24 overflow-hidden
-      scroll-smooth selection:bg-purple-600 selection:text-white"
+      className="min-h-screen text-white flex flex-col items-center justify-center 
+      px-6 py-24 scroll-smooth selection:bg-purple-600 selection:text-white overflow-visible"
     >
-      {/* 🔥 FULL HEIGHT RIGHT SIDE GLOW */}
+      {/* Glow */}
       <motion.div
         style={{ y: y2 }}
-        className="absolute right-0 top-0 h-full 
+        className="pointer-events-none absolute right-0 top-0 h-full 
         w-[400px] sm:w-[500px] md:w-[650px] lg:w-[750px]
-        blur-[120px] opacity-70 pointer-events-none"
+        blur-[120px] opacity-70"
       />
 
-      {/* Title Section */}
+      {/* Title */}
       <div className="relative z-10 text-center mb-10 max-w-3xl mx-auto px-2">
         <p className="text-blue-300 font-semibold uppercase tracking-widest mb-2">
           Our Work
@@ -36,38 +36,29 @@ export function FeaturedProjects() {
       </div>
 
       {/* Category Tabs */}
-      <div className="relative z-10 flex items-center justify-center w-full mt-10 lg:mt-0">
-        <nav
-          aria-label="Project Categories"
-          className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-12"
-        >
-          {["Featured", "B2B", "B2C", "Ecommerce"].map((tab, index) => (
-            <motion.button
-              key={index}
-              whileHover={{ scale: 1.07 }}
-              whileTap={{ scale: 0.97 }}
-              className={`px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg border text-sm sm:text-base font-medium tracking-wide transition-all 
-                ${
-                  index === 0
-                    ? "border-blue-400 text-blue-300 hover:bg-blue-500 hover:text-white hover:border-blue-500"
-                    : "border-blue-400 text-blue-300 hover:bg-blue-500 hover:text-white hover:border-blue-500"
-                }`}
-              aria-pressed={index === 0}
-            >
-              {tab}
-            </motion.button>
-          ))}
-        </nav>
-      </div>
+      <nav className="relative z-10 flex flex-wrap justify-center gap-4 sm:gap-6 mb-12">
+        {["Featured", "B2B", "B2C", "Ecommerce"].map((tab, index) => (
+          <motion.button
+            key={index}
+            whileHover={{ scale: 1.07 }}
+            whileTap={{ scale: 0.97 }}
+            className="px-5 sm:px-6 py-2.5 rounded-lg border text-sm sm:text-base font-medium 
+            tracking-wide border-blue-400 text-blue-300 
+            hover:bg-blue-500 hover:text-white hover:border-blue-500"
+            aria-pressed={index === 0}
+          >
+            {tab}
+          </motion.button>
+        ))}
+      </nav>
 
-      {/* Floating Project Images */}
+      {/* Projects */}
       <div
         className="relative z-10 flex flex-wrap justify-center gap-8 sm:gap-10 md:gap-16"
-        aria-label="Featured Project Thumbnails"
       >
         {[
           { src: "/B2B.png", alt: "B2B Website Project" },
-          { src: "/BC.png", alt: "B2C Website Project" },
+          { src: "/B2C.png", alt: "B2C Website Project" },
           { src: "/Ecommerce.png", alt: "Ecommerce Website Project" },
         ].map((project, index) => (
           <motion.figure
@@ -84,7 +75,6 @@ export function FeaturedProjects() {
                 alt={project.alt}
                 fill
                 quality={70}
-                loading="lazy"
                 sizes="(max-width: 640px) 80vw, (max-width: 1024px) 40vw, 340px"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -97,12 +87,10 @@ export function FeaturedProjects() {
       <div className="relative z-10 mt-16 text-center">
         <motion.a
           href="#"
-          aria-label="View Services"
           className="inline-block border border-white text-white 
-          px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-semibold 
+          px-6 sm:px-8 py-2.5 rounded-xl font-semibold 
           transition-all duration-300 ease-in-out
-          hover:bg-[#2563eb]/20 hover:border-[#3b82f6] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]
-          focus:outline-none focus:ring-2 focus:ring-[#3b82f6]/50"
+          hover:bg-[#2563eb]/20 hover:border-[#3b82f6] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]"
           whileHover={{ scale: 1.07 }}
           whileTap={{ scale: 0.97 }}
         >

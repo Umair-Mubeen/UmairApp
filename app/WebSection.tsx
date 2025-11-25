@@ -9,10 +9,10 @@ export function WebSection() {
 
   return (
     <section
-      id="web"
-      aria-label="Web Design and Branding Section"
-      className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-16 text-white overflow-hidden 
-      scroll-smooth selection:bg-purple-600 selection:text-white"
+  id="web"
+  aria-label="Web Design and Branding Section"
+  className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-16 text-white 
+  scroll-smooth selection:bg-purple-600 selection:text-white"
     >
       {/* ⭐ RIGHT-SIDE FULL BACKGROUND GLOW */}
       <motion.div

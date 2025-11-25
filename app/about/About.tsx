@@ -20,7 +20,7 @@ export function About() {
     {
       title: "Modern Tech Stack",
       desc: `We use a powerful, modern technology stack to build fast, scalable, and future-proof digital experiences. From React, Next.js, and TailwindCSS to AWS, databases, automations, and API integrations — everything is engineered for performance and reliability. Whether you're launching a website, dashboard, or custom web application, our tech ensures lightning-fast loading, smooth interactions, and long-term stability.`,
-      img: "/StockImages/Technology.png",
+      img: "/Tech.png",
     },
   ];
 

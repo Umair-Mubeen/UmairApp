@@ -46,7 +46,7 @@ export function Contact() {
         transition={{ duration: 0.6 }}
         className="relative text-4xl md:text-5xl font-bold text-center mb-4 z-10"
       >
-        Take The Silk Road To <br />
+        Take the Smart Route to <br />
         <span className="text-blue-300">Digitizing Your Business Growth</span>
       </motion.h2>
 
